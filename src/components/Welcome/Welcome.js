@@ -1,8 +1,9 @@
 import "./Welcome.scss";
-import Welcome from "../../assets/images/welcome.svg";
+import {Link} from "react-router-dom";
+import WelcomeImg from "../../assets/images/welcome.svg";
 import Logo from "../../assets/icons/logo/logo2.png";
 
-export default function welcome() {
+export default function Welcome() {
   return (
     <main className="main__container">
       <section className="main__side">
@@ -28,13 +29,14 @@ export default function welcome() {
             type="password"
           ></input>
           <button className="main__signin--button">Sign In</button>
+          <Link to="/dashboard" className="main__signin--guest">CONTINUE AS GUEST</Link>
         </form>
         <section className="main__button">
           <p className="main__button--signup">SIGN UP</p>
           <p className="main__button--forgot">FORGOT PASSWORD?</p>
         </section>
       </section>
-      <img className="main__img" src={Welcome} alt="Growing money" />
+      <img className="main__img" src={WelcomeImg} alt="Growing money" />
     </main>
   );
 }

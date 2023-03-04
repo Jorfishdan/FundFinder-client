@@ -1,4 +1,4 @@
-import Welcome from "./components/welcome/Welcome";
+import Welcome from "./components/Welcome/Welcome";
 import Homepage from "./pages/Homepage";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.scss";
