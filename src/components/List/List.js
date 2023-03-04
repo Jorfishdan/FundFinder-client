@@ -6,7 +6,7 @@ export default function List() {
   return (
     <main className="list__container">
         <Filter/>
-      <h1 className="list__title">Current Postings</h1>
+      {/* <h1 className="list__title">Current Postings</h1> */}
       <section className="list__items">
         <div className="list__items--box">
           <h1 className="list__items--title">This is a loanThis is a loanThis is a loanThis is a loan</h1>
