@@ -1,13 +1,21 @@
 import "./Landing.scss";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import WelcomeImg from "../../assets/images/welcome.svg";
 import Logo from "../../assets/icons/logo/logo2.png";
-import { useEffect } from "react";
+import jwt_decode from "jwt-decode";
+import { useEffect, useState } from "react";
 
 export default function Welcome() {
-  function handleCallbackResponse(response) {
+  const [user, setUser] = useState({});
+  const navigate = useNavigate();
+
+  const handleCallbackResponse = (response)=> {
     console.log("Encoded JWT ID token:" + response.credential);
+    const userObject = jwt_decode(response.credential);
+    console.log(userObject);
+    setUser(userObject);
   }
+
   useEffect(() => {
     /* global google */
     google.accounts.id.initialize({
@@ -22,6 +30,11 @@ export default function Welcome() {
     });
   }, []);
 
+
+  if (user) {
+    navigate("/dashboard");
+  }
+ 
   return (
     <main className="main__container">
       <section className="main__side">
@@ -33,7 +46,7 @@ export default function Welcome() {
           <br></br>DON'T LET FINANCIAL BARRIES HOLD YOU BACK - LET US HELP YOU
           FIND THE FUNDING YOU NEED TO PURSUE YOUR DREAMS
         </p>
-        {/* <form className="main__signin">
+        <form className="main__signin">
           <label className="main__signin--label">Email</label>
           <input
             className="main__signin--input"
@@ -50,10 +63,13 @@ export default function Welcome() {
           <Link to="/dashboard" className="main__signin--guest">
             CONTINUE AS GUEST
           </Link>
-        </form> */}
+        </form>
         <section className="main__google">
           <div id="signInDiv"></div>
-          <Link to ="/dashboard" className="main__google--guest">CONTINUE AS GUEST</Link>
+          <Link to="/dashboard" className="main__google--guest">
+            CONTINUE AS GUEST
+          </Link>
+          {/* <button onClick={(e)=> handleSignOut(e)}>Sign Out</button> */}
         </section>
         <section className="main__button">
           <p className="main__button--signup">SIGN UP</p>
