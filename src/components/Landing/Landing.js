@@ -3,18 +3,16 @@ import { Link, useNavigate } from "react-router-dom";
 import WelcomeImg from "../../assets/images/welcome.svg";
 import Logo from "../../assets/icons/logo/logo2.png";
 import jwt_decode from "jwt-decode";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 
-export default function Welcome() {
-  const [user, setUser] = useState({});
+export default function Welcome({ user, setUser }) {
   const navigate = useNavigate();
-
-  const handleCallbackResponse = (response)=> {
+  const handleCallbackResponse = (response) => {
     console.log("Encoded JWT ID token:" + response.credential);
     const userObject = jwt_decode(response.credential);
     console.log(userObject);
     setUser(userObject);
-  }
+  };
 
   useEffect(() => {
     /* global google */
@@ -30,11 +28,14 @@ export default function Welcome() {
     });
   }, []);
 
+  useEffect(() => {
+    if (user) {
+      navigate("/dashboard");
+    } else {
+      navigate("/");
+    }
+  }, [user, navigate]);
 
-  if (user) {
-    navigate("/dashboard");
-  }
- 
   return (
     <main className="main__container">
       <section className="main__side">
