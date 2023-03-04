@@ -14,7 +14,7 @@ export default function Dashboard() {
           </div>
           <div className="dashboard__saved--buttons">
             <button className="dashboard__saved--buttons--apply">Apply</button>
-            <button className="dashboard__saved--buttons--hide">Hide</button>
+            <button className="dashboard__saved--buttons--hide">Delete</button>
           </div>
         </div>
       </section>

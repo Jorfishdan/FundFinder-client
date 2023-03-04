@@ -13,7 +13,7 @@ export default function List() {
         <div className="list__items--buttons">
           <button className="list__items--buttons--save">Save</button>
           <button className="list__items--buttons--apply">Apply</button>
-          <button className="list__items--buttons--hide">Hide</button>
+          <button className="list__items--buttons--hide">Delete</button>
         </div>
       </section>
     </main>
