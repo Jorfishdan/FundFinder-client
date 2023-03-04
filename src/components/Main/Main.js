@@ -5,7 +5,7 @@ import Dashboard from "../Dashboard/Dashboard";
 
 export default function Main() {
   return (
-    <main className = "dashboard__container">
+    <main className = "current__container">
       <List/>
       <Dashboard/>
     </main>
