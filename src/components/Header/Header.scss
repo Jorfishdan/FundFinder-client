@@ -1,0 +1,40 @@
+@use "../../styles/variables" as *;
+
+.header {
+  &__container {
+    min-width: 775px;
+    display: flex;
+    justify-content: space-between;
+    background-color: $blue;
+    width: 100vw;
+    height: 10rem;
+  }
+
+  &__logo {
+    margin-left: 3rem;
+  }
+
+  &__nav {
+    width: 30rem;
+    height: 5rem;
+    display: flex;
+    justify-content: space-between;
+    margin-right: 3rem;
+    align-self: center;
+
+    &--menu {
+      height: 4rem;
+      align-self: center;
+    }
+
+    &--sign {
+      color: $blue;
+      font-size:1.4rem;
+      padding:0 4rem;
+      border-radius: 10px;
+      outline: none;
+      border: 1px solid $blue;
+      box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    }
+  }
+}
