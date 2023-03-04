@@ -2,6 +2,7 @@
 
 .header {
   &__container {
+    min-width: 775px;
     display: flex;
     justify-content: space-between;
     background-color: $blue;
