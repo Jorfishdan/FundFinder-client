@@ -32,8 +32,18 @@
   }
   &__google{
     display: flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
     margin-bottom: 4rem;
+
+    &--guest{
+      color:$grey;
+      margin-top:0.5rem;
+      font-weight:600;
+      text-decoration: none;
+      font-size:1.2rem;
+    }
   }
 
   &__signin {
@@ -81,13 +91,7 @@
       border: 1px solid $blue;
       box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
     }
-    &--guest{
-      color:$blue;
-      margin-top:0.5rem;
-      font-weight:600;
-      text-decoration: none;
-      font-size:1.2rem;
-    }
+
   }
   &__button{
     display: flex;

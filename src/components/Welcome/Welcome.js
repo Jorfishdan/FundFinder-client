@@ -53,6 +53,7 @@ export default function Welcome() {
         </form> */}
         <section className="main__google">
           <div id="signInDiv"></div>
+          <Link to ="/dashboard" className="main__google--guest">CONTINUE AS GUEST</Link>
         </section>
         <section className="main__button">
           <p className="main__button--signup">SIGN UP</p>
