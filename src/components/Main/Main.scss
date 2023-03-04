@@ -1,0 +1,8 @@
+@use "../../styles/variables" as *;
+
+.dashboard{
+   &__container{
+    display:flex;
+    justify-content: space-between;
+   }
+}

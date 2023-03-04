@@ -1,0 +1,82 @@
+@use "../../styles/variables" as *;
+
+.list {
+  &__container {
+    width: 80vw;
+    height: 85vh;
+    background: $cream;
+    border: 1px solid $blue;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    margin-top: 2rem;
+    margin-left: 2rem;
+  }
+
+  &__title {
+    color: $blue;
+    text-decoration: underline;
+    margin-top: 0.5rem;
+    margin-left: 2rem;
+  }
+  &__items {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 2rem;
+    margin-right: 2rem;
+
+    padding-left:2rem;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+
+    &--box {
+      display: flex;
+      flex-direction: column;
+    }
+
+    &--title {
+      color: $blue;
+      margin-bottom: 0;
+      font-size: 1.8rem;
+    }
+    &--deadline {
+      color: $red;
+      margin-top: 0;
+      font-size: 1.4rem;
+    }
+    &--buttons {
+      display: flex;
+      width: 27rem;
+      justify-content: space-between;
+      margin-right:2rem;
+
+      &--save {
+        font-size: 1.8rem;
+        background-color: $green;
+        border: 1px solid $darkGreen;
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+        border-radius: 10px;
+        color: $white;
+        padding: 0.5rem 2rem;
+      }
+      &--apply {
+        font-size: 1.8rem;
+        background-color: $blue;
+        border: 1px solid $black;
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+        border-radius: 10px;
+        color: $white;
+        padding: 0.5rem 2rem;
+      }
+      &--hide {
+        font-size: 1.8rem;
+        background-color: $red;
+        border: 1px solid $darkRed;
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+        border-radius: 10px;
+        color: $white;
+        padding: 0.5rem 2rem;
+      }
+    }
+  }
+}
