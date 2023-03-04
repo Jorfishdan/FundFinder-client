@@ -45,8 +45,8 @@ function Filter() {
               className="filter__arrow"
             />
           </article>
-          <article className="filter__search">Search</article>
-          <article className="filter__reset">Reset</article>
+          <button className="filter__search">Search</button>
+          <button className="filter__reset">Reset</button>
         </div>
       </section>
     </>

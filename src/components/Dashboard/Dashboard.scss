@@ -68,6 +68,9 @@
         color: $blue;
         padding: 0.5rem 3rem;
         margin-top: 0;
+        &:hover{
+            cursor: pointer;
+        }
       }
       &--hide {
         font-size: 1.4rem;
@@ -79,6 +82,9 @@
         color: $red;
         padding: 0.5rem 3rem;
         margin-top: 0;
+        &:hover{
+            cursor: pointer;
+        }
       }
     }
   }

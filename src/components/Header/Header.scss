@@ -11,7 +11,8 @@
   }
 
   &__logo {
-    margin-left: 3rem;
+    margin-left: 1rem;
+    width:40rem;
   }
 
   &__nav {
@@ -25,6 +26,14 @@
     &--menu {
       height: 4rem;
       align-self: center;
+      &:hover{
+        cursor: pointer;
+    }
+    }
+    &--search{
+      &:hover{
+        cursor: pointer;
+    }
     }
 
     &--sign {
@@ -35,6 +44,9 @@
       outline: none;
       border: 1px solid $blue;
       box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+      &:hover{
+        cursor: pointer;
+    }
     }
   }
 }
