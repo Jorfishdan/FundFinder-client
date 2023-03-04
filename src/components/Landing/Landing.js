@@ -1,4 +1,4 @@
-import "./Welcome.scss";
+import "./Landing.scss";
 import { Link } from "react-router-dom";
 import WelcomeImg from "../../assets/images/welcome.svg";
 import Logo from "../../assets/icons/logo/logo2.png";
