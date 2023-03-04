@@ -1,8 +1,11 @@
 import "./Welcome.scss";
 import Welcome from "../../assets/images/welcome.svg";
 import Logo from "../../assets/icons/logo/logo2.png";
+import {useEffect} from 'react';
+
 
 export default function welcome() {
+
   return (
     <main className="main__container">
       <section className="main__side">
