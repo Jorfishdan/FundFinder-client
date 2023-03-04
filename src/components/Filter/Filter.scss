@@ -1,0 +1,12 @@
+@use "../../styles/variables" as *;
+
+.filter {
+   &__wrapper {
+    background-color: red;
+   }  
+
+   &__type{
+    color:green;
+   }
+
+}
