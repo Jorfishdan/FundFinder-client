@@ -1,0 +1,19 @@
+@use "../../styles/variables" as *;
+
+.main{
+    &__container{
+        background-color: $blue;
+        width:55vw;
+        height:100vh;
+        color:$grey;
+    }
+
+    &__title{
+        font-size: 4.2rem;
+        color:$white;
+        margin-top:0;
+    }
+    &__subtitle{
+        font-size: 1.8rem;
+    }
+}
