@@ -1,20 +1,20 @@
 import { useState } from "react";
 import "./LocationMod.scss";
 function LocationMod({
-    openModal,
+  openModal,
   locationFilterValues,
   setLocationFilterValues,
 }) {
   const [filterValues, setFilterValues] = useState({
-      BC: false,
+    BC: false,
     Manitoba: false,
-    Saskatchewan: false, 
+    Saskatchewan: false,
     Brunswick: false,
     NWT: false,
-    Yukon:false,
+    Yukon: false,
     PEI: false,
     Ontario: false,
-    Nunavut:false,
+    Nunavut: false,
     Quebec: false,
     Newfoundland: false,
     NS: false,
@@ -43,8 +43,8 @@ function LocationMod({
               />
             </label>
           </span>
-           <span className="location__Manitoba">
-           Manitoba
+          <span className="location__Manitoba">
+            Manitoba
             <label htmlFor="Manitoba">
               <input
                 type="checkbox"
@@ -56,7 +56,7 @@ function LocationMod({
             </label>
           </span>
           <span className="location__Saskatchewan">
-           Saskatchewan
+            Saskatchewan
             <label htmlFor="Saskatchewan">
               <input
                 type="checkbox"
@@ -67,8 +67,8 @@ function LocationMod({
               />
             </label>
           </span>
-            <span className="location__Brunswick">
-          New Brunswick
+          <span className="location__Brunswick">
+            New Brunswick
             <label htmlFor="Brunswick">
               <input
                 type="checkbox"
@@ -80,7 +80,7 @@ function LocationMod({
             </label>
           </span>
           <span className="location__NWT">
-          Northwest Territories
+            Northwest Territories
             <label htmlFor="NWT">
               <input
                 type="checkbox"
@@ -92,7 +92,7 @@ function LocationMod({
             </label>
           </span>
           <span className="location__Yukon">
-          Yukon
+            Yukon
             <label htmlFor="Yukon">
               <input
                 type="checkbox"
@@ -104,7 +104,7 @@ function LocationMod({
             </label>
           </span>
           <span className="location__PEI">
-          Prince Edward Island
+            Prince Edward Island
             <label htmlFor="PEI">
               <input
                 type="checkbox"
@@ -116,7 +116,7 @@ function LocationMod({
             </label>
           </span>
           <span className="location__Ontario">
-          Ontario
+            Ontario
             <label htmlFor="Ontario">
               <input
                 type="checkbox"
@@ -128,7 +128,7 @@ function LocationMod({
             </label>
           </span>
           <span className="location__Nunavut">
-          Nunavut
+            Nunavut
             <label htmlFor="Nunavut">
               <input
                 type="checkbox"
@@ -140,7 +140,7 @@ function LocationMod({
             </label>
           </span>
           <span className="location__Quebec">
-          Quebec
+            Quebec
             <label htmlFor="Quebec">
               <input
                 type="checkbox"
@@ -152,7 +152,7 @@ function LocationMod({
             </label>
           </span>
           <span className="location__Newfoundland">
-          Newfoundland
+            Newfoundland
             <label htmlFor="Newfoundland">
               <input
                 type="checkbox"
@@ -164,7 +164,7 @@ function LocationMod({
             </label>
           </span>
           <span className="location__NS">
-          Nova Scotia
+            Nova Scotia
             <label htmlFor="NS">
               <input
                 type="checkbox"

@@ -4,7 +4,6 @@ import Filter from "../Filter/Filter";
 import { useState } from "react";
 
 export default function Dashboard() {
-  const [filteredResults, setFilteredResults] = useState(null)
   return (
     <main className="dashboard__container">
       <section className="dashboard__saved">
@@ -31,7 +30,6 @@ export default function Dashboard() {
           <h2 className="dashboard__applied--deadline">This is a deadline</h2>
         </div>
       </section>
-      <Filter filteredResults={filteredResults} setFilteredResults={setFilteredResults} />
     </main>
   );
 }

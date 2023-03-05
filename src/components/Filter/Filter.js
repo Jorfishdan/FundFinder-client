@@ -1,12 +1,15 @@
 import arrow from "../../assets/images/arrow2.png";
 import TypeMod from "../TypeMod/TypeMod";
 import LocationMod from "../LocationMod/LocationMod";
+import GenderMod from "../GenderMod/GenderMod";
 import { useState } from "react";
 
 function Filter({setPage, filteredResults,setFilteredResults }) {
 
   const [openModal, setOpenModal] = useState(false);
-  const [openModalLocation, setOpenModalLocation] = useState(false)
+  const [openModalLocation, setOpenModalLocation] = useState(false);
+  const [openModalGender, setOpenModalGender] = useState(false);
+
   const [filterValues, setFilterValues] =  useState({});
   const [typeFilterValues, setTypeFilterValues] = useState ({
     scholarship: false, 
@@ -43,10 +46,14 @@ function Filter({setPage, filteredResults,setFilteredResults }) {
   function typeHandler() {
     setOpenModal(prevOpenModal => !prevOpenModal);
   }
+
   function locationHandler() {
     setOpenModalLocation(prevOpenModalLocation => !prevOpenModalLocation);
   }
 
+ function genderHandler() {
+    setOpenModalGender(prevOpenModalGender => !prevOpenModalGender);
+  }
   function handleFilterSubmit(values) {
     // do something with the filter values
     console.log(values)
@@ -82,22 +89,24 @@ function Filter({setPage, filteredResults,setFilteredResults }) {
               src={arrow}
               alt="down arrow to open options"
               className="filter__arrow"
+              onClick = {genderHandler}
             />
           </article>
          
-          <article className="filter__item">
+          {/* <article className="filter__item">
             Date Posted
             <img
               src={arrow}
               alt="down arrow to open options"
               className="filter__arrow"
             />
-          </article>
+          </article> */}
           <button className="filter__search" onClick={handleFilterSubmit}>Search</button>
           <button className="filter__reset">Reset</button>
         </div>
         <TypeMod openModal ={openModal} filterValues={typeFilterValues} setFilterValues={setTypeFilterValues} />
-        <LocationMod openModal ={openModalLocation}  filterValues={locationFilterValues} setFilterValues={setLocationFilterValues} />
+        <LocationMod openModal ={openModalLocation} filterValues={locationFilterValues} setFilterValues={setLocationFilterValues} />
+        <GenderMod openModal ={openModalGender} filterValues={genderFilterValues} setFilterValues={setGenderFilterValues} />
       </section>
     </>
   );
