@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function Setting({openSetting}) {
+export default function Setting({openSetting, isLoggedIn}) {
 
     if(!openSetting)
         return null

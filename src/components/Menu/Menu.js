@@ -60,7 +60,7 @@ export default function Menu({
           alt="Logout Icon"
         />
       </div>
-      <Setting openSetting={setting} />
+      <Setting openSetting={setting} isLoggedIn={isLoggedIn} />
     </main>
   );
 }
