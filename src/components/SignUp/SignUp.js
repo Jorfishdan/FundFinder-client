@@ -47,6 +47,12 @@ export default function Welcome({ user, setUser }) {
           FIND THE FUNDING YOU NEED TO PURSUE YOUR DREAMS
         </p>
         <form className="main__signin">
+        <label className="main__signin--label">Name</label>
+          <input
+            className="main__signin--input"
+            placeholder="Email..."
+            type="email"
+          ></input>
           <label className="main__signin--label">Email</label>
           <input
             className="main__signin--input"
@@ -71,7 +77,7 @@ export default function Welcome({ user, setUser }) {
         </form>
      
         <section className="main__button">
-         <Link to='/signup'><p className="main__button--signup">SIGN UP</p></Link> 
+         <Link to='/'><p className="main__button--signup">Login</p></Link> 
           <p className="main__button--forgot">FORGOT PASSWORD?</p>
         </section>
       </section>
