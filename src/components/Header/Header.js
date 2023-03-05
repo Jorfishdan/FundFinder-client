@@ -39,7 +39,9 @@ export default function Header({ user, setUser, isLoggedIn, setIsLoggedIn }) {
           src={Search}
           alt="Magnifying glass"
         />
-        <button className="header__nav--sign">Sign-up</button>
+        <Link to="/signup" className="header__nav--sign">
+          Sign-up
+        </Link>
         <img
           onClick={() => handleMenu()}
           className="header__nav--menu"
