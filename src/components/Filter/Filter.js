@@ -54,53 +54,37 @@ function Filter({setPage, filteredResults, setFilteredResults }) {
     setOpenModalGender(prevOpenModalGender  => !prevOpenModalGender);
   }
 
-  
   function handleFilterSubmit() {
     const filterValues = {
       type: checkedTypes,
       location: checkedLocation,
       gender: checkedGender,
-    }
-    setFilteredResults(filterValues);
-    setPage(filteredResults)
-    console.log(filterValues)
-    sendFilterData()
-
-  }
-
-  function sendFilterData() {
-    axios.post(`http://localhost:8080/funding`, {
-      id: uuidv4(),
-      type:checkedTypes,
-      location:checkedLocation,
-      gender:checkedGender,
-    })
-    .then(response => {
-      console.log("received response:", response.data);
-    })
-    .catch(error => {
-      console.error("error:", error);
-    });
-  }
-
-  // useEffect(() => {
-  //   axios.post(`http://localhost:8080/funding`, {
-  //     id: uuidv4(),
-  //     type:checkedTypes,
-  //     location:checkedLocation,
-  //     gender:checkedGender,
-
-  //   })
-  //   .then(response => {
-  //     console.log("received response:", response.data);
-     
-  //   })
-  //   .catch(error => {
-  //     console.error("error:", error);
-  //   });
-  // }, []); 
+    };
   
+    // const queryParams = Object.keys(filterValues)
+    //   .map((key) => {
+    //     const checkedValues = Object.entries(filterValues[key])
+    //       .filter(([, isChecked]) => isChecked)
+    //       .map(([value]) => value);
+    //     return checkedValues.length ? `${key}=${checkedValues.join(",")}` : "";
+    //   })
+    //   .filter((qp) => qp !== "")
+    //   .join("&");
 
+    // get(`http://localhost:8080/funding?${queryParams}`)
+  
+    axios
+    .get(`http://localhost:8080/funding?location=${encodeURIComponent(Object.keys(checkedLocation).filter(key => checkedLocation[key]).join(','))}&gender=${encodeURIComponent(Object.keys(checkedGender).filter(key => checkedGender[key]).join(','))}`)
+      .then((response) => {
+        console.log("received response:", response.data);
+        setFilteredResults(response.data);
+        setPage(response.data);
+      })
+      .catch((error) => {
+        console.error("error:", error);
+      });
+  }
+    
   return (
     <>
       <section className="filter">
@@ -173,3 +157,58 @@ export default Filter;
   // .catch((error) => {
   //   console.error(error);
   // });
+
+  /////////////Post Request//////////////
+
+  // function sendFilterData() {
+  //   axios.post(`http://localhost:8080/funding`, {
+  //     id: uuidv4(),
+  //     type:checkedTypes,
+  //     location:checkedLocation,
+  //     gender:checkedGender,
+  //   })
+  //   .then(response => {
+  //     console.log("received response:", response.data);
+  //   })
+  //   .catch(error => {
+  //     console.error("error:", error);
+  //   });
+  // }
+
+  ///////prev submithandler that worked//////
+  // function handleFilterSubmit() {
+  //   const filterValues = {
+  //     type: checkedTypes,
+  //     location: checkedLocation,
+  //     gender: checkedGender,
+  //   }
+  //   setPage(filteredResults)
+  //   setFilteredResults([filterValues]);
+  //   console.log(filterValues)
+  //   sendFilterData()
+
+  // }
+
+  ///////////////PUT Request////////////
+    // function sendFilterData(filterValues, fundId) {
+  //   axios
+  //   .put(`http://localhost:8080/funding/${fundId}`, filterValues)
+  //   .then((response) => {
+  //     console.log("received response:", response.data);
+  //     setFilteredResults(response.data);
+  //     setPage(response.data);
+  //   })
+  //   .catch((error) => {
+  //     console.error("error:", error);
+  //   });
+  //   }
+
+  //   useEffect(() => {
+  //     if (Array.isArray(filteredResults)) {
+  //       const [fundToUpdate] = filteredResults;
+  //       const fundId = fundToUpdate.id;
+  //       sendFilterData(filterValues, fundId);
+  //     } else {
+  //       console.log("filteredResults is not an array");
+  //     }
+  //   }, [filteredResults]);
