@@ -3,8 +3,17 @@ import Email from "../../assets/icons/contact.png";
 import Logout from "../../assets/icons/logout.png";
 import Setting from "../Setting/Setting";
 import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
 
-export default function Menu({ openMenu, setting, setSetting, user, setUser }) {
+export default function Menu({
+  openMenu,
+  setting,
+  setSetting,
+  user,
+  setUser,
+  isLoggedIn,
+  setIsLoggedIn,
+}) {
   const navigate = useNavigate();
 
   if (!openMenu) return null;
@@ -15,7 +24,9 @@ export default function Menu({ openMenu, setting, setSetting, user, setUser }) {
 
   const handleLogout = (event) => {
     setUser({});
-    if (Object.keys(user).length === 0) {
+    setIsLoggedIn(false);
+
+    if (Object.keys(user).length === 0 && !isLoggedIn) {
       navigate("/");
     }
   };

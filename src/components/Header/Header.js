@@ -5,11 +5,11 @@ import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import Dropmenu from "../Menu/Menu";
 
-export default function Header({user, setUser}) {
-  const [menu, setMenu] = useState(false)
+export default function Header({ user, setUser, isLoggedIn, setIsLoggedIn }) {
+  const [menu, setMenu] = useState(false);
   const [setting, setSetting] = useState(false);
 
-  let menuRef = useRef()
+  let menuRef = useRef();
 
   useEffect(() => {
     let handler = (e) => {
@@ -28,20 +28,34 @@ export default function Header({user, setUser}) {
     setMenu(!menu);
   }
   return (
-    <header className="header__container" ref={menuRef} >
-      <Link to="/dashboard"  className="header__logo">
-        <img className="header__logo" src={Logo} alt="FundFinder Logo"  />
+    <header className="header__container" ref={menuRef}>
+      <Link to="/dashboard" className="header__logo">
+        <img className="header__logo" src={Logo} alt="FundFinder Logo" />
       </Link>
-      <section className="header__nav" >
+      <section className="header__nav">
         <img
           className="header__nav--search"
           src={Search}
           alt="Magnifying glass"
         />
-        <button className="header__nav--sign" >Sign-up</button>
-        <img onClick = {() => handleMenu()} className="header__nav--menu" src={Menu} alt="Menu icon"  />
+        <button className="header__nav--sign">Sign-up</button>
+        <img
+          onClick={() => handleMenu()}
+          className="header__nav--menu"
+          src={Menu}
+          alt="Menu icon"
+        />
       </section>
-      <Dropmenu openMenu={menu} setOpenMenu = {setMenu} setting={setting} setSetting={setSetting}  user={user} setUser={setUser}/>
+      <Dropmenu
+        openMenu={menu}
+        setOpenMenu={setMenu}
+        setting={setting}
+        setSetting={setSetting}
+        user={user}
+        setUser={setUser}
+        isLoggedIn={isLoggedIn}
+        setIsLoggedIn={setIsLoggedIn}
+      />
     </header>
   );
 }
