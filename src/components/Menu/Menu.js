@@ -3,7 +3,6 @@ import Email from "../../assets/icons/contact.png";
 import Logout from "../../assets/icons/logout.png";
 import Setting from "../Setting/Setting";
 import { useNavigate } from "react-router-dom";
-import { useEffect } from "react";
 import { Link } from "react-router-dom";
 
 export default function Menu({
