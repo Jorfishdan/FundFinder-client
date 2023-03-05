@@ -3,14 +3,15 @@ import TypeMod from "../TypeMod/TypeMod";
 import LocationMod from "../LocationMod/LocationMod";
 import GenderMod from "../GenderMod/GenderMod";
 import { useState } from "react";
+import axios from 'axios';
 
 function Filter({setPage, filteredResults, setFilteredResults }) {
+
  
 
   const [openModal, setOpenModal] = useState(false);
   const [openModalLocation, setOpenModalLocation] = useState(false);
   const [openModalGender, setOpenModalGender] = useState(false);
-  const [allResults, setAllResults] = useState([]);
 
   const [filterValues, setFilterValues] =  useState({});
   const [checkedTypes, setCheckedTypes] = useState ({
@@ -34,6 +35,13 @@ function Filter({setPage, filteredResults, setFilteredResults }) {
     Newfoundland: false,
     NS: false,
   })
+
+  const [checkedGender, setCheckedGender] = useState ({
+    female: false, 
+    LGBTQIA: false, 
+    male: false,
+    other: false,
+  })
  
   function typeHandler() {
     setOpenModal(prevOpenModal => !prevOpenModal);
@@ -43,17 +51,44 @@ function Filter({setPage, filteredResults, setFilteredResults }) {
     setOpenModalLocation(prevOpenModalLocation  => !prevOpenModalLocation);
   }
 
+  function genderHandler() {
+    setOpenModalGender(prevOpenModalGender  => !prevOpenModalGender);
+  }
+
   
   function handleFilterSubmit() {
     const filterValues = {
       type: checkedTypes,
       location: checkedLocation,
-      // gender: genderFilterValues,
+      gender: checkedGender,
     }
-    setFilterValues(filterValues);
+    setFilteredResults(filterValues);
     setPage(filteredResults)
     console.log(filterValues)
+
+    axios
+    .post(`http://localhost:8080/funding`)
+    .then((response) => {
+      setFilteredResults(response.data);
+      console.log(response.data)
+      setPage(response.data);
+    })
+    .catch((error) => {
+      console.error(error);
+    });
+
+    axios
+  .get(`http://localhost:8080/funding`)
+  .then((response) => {
+    setFilteredResults(response.data);
+    console.log(response.data)
+    setPage(response.data);
+  })
+  .catch((error) => {
+    console.error(error);
+  });
   }
+
   return (
     <>
       <section className="filter">
@@ -82,7 +117,7 @@ function Filter({setPage, filteredResults, setFilteredResults }) {
               src={arrow}
               alt="down arrow to open options"
               className="filter__arrow"
-              // onClick = {genderHandler}
+              onClick = {genderHandler}
             />
           </article>
          
@@ -91,10 +126,25 @@ function Filter({setPage, filteredResults, setFilteredResults }) {
         </div>
         <TypeMod openModal ={openModal} checkedTypes={checkedTypes} setCheckedTypes={setCheckedTypes} />
         <LocationMod openModal ={openModalLocation} checkedLocation={checkedLocation} setCheckedLocation={setCheckedLocation} />
-        {/* <GenderMod openModal ={openModalGender} filterValues={genderFilterValues} setFilterValues={setGenderFilterValues} /> */}
+        <GenderMod openModal ={openModalGender} checkedGender={checkedGender} setCheckedGender={setCheckedGender} />
       </section>
     </>
   );
 }
 
 export default Filter;
+
+// const queryString = Object.entries(filterValues)
+  // .map(([key, value]) => {
+  //   const filters = Object.entries(value)
+  //     .filter(([_, checked]) => checked)
+  //     .map(([filter]) => `${key}=${filter}`);
+  //   if (filters.length > 0) {
+  //     return filters.join("&");
+  //   } else {
+  //     return null;
+  //   }
+  // })
+  // .filter((query) => query !== null)
+  // .join("&");
+  // `http://localhost:8080?${queryString}`

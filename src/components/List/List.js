@@ -4,10 +4,10 @@ import Filter from "../Filter/Filter";
 
 export default function List() {
 const [page, setPage] = useState(null)
-// const [filteredResults, setFilteredResults] = useState(null)
+const [filteredResults, setFilteredResults] = useState(null)
   return (
     <main className="list__container">
-       <Filter setPage={setPage}/>
+       <Filter setPage={setPage} setFilteredResults={setFilteredResults} filteredResults={filteredResults}/>
       {/* <h1 className="list__title">Current Postings</h1> */}
       <section className="list__items">
         <div className="list__items--box">
