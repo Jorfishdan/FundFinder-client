@@ -1,0 +1,23 @@
+.setting {
+  &__container {
+    position:absolute;
+    width: 8vw;
+    min-width: 17rem;
+    background-color: $cream;
+    border: 1px solid $blue;
+    border-radius: 10px;
+  }
+
+  &__title {
+    text-align: center;
+    color: $blue;
+    font-size: 2.2rem;
+    text-decoration: underline;
+  }
+  &__reset {
+    color: $blue;
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin: 1rem;
+  }
+}

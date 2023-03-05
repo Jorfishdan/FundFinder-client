@@ -1,6 +1,5 @@
 import React from "react";
 import Filter from "../Filter/Filter";
-import Menu from "../Menu/Menu";
 
 export default function List() {
   return (
@@ -18,7 +17,6 @@ export default function List() {
           <button className="list__items--buttons--hide">Delete</button>
         </div>
       </section>
-      <Menu/>
     </main>
   );
 }
