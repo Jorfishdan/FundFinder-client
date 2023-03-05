@@ -1,16 +1,19 @@
-import { useState } from "react";
+import {  useState } from "react";
 import './TypeMod.scss';
 
-function TypeMod({openModal, typeFilterValues,  setTypeFilterValues}) { 
+function TypeMod({openModal, checkedTypes, setCheckedTypes}) { 
    
-    const [filterValues, setFilterValues] = useState ({ scholarship:false, grant: false, bursary: false, loan: false})
     const handleInputChange= (event)=> {
         const {name, checked } = event.target;
-        setFilterValues((prevFilterValues) => ({ 
-            ...prevFilterValues,
+        setCheckedTypes((prevCheckedTypes) => ({ 
+            ...prevCheckedTypes,
             [name]:checked,
+            
         }) )
+    
     }
+  
+
     if (!openModal) return null;
 
 return (
@@ -23,7 +26,7 @@ return (
             type = "checkbox"
             name = "scholarship"
             id="scholarship"
-            checked={filterValues.scholarship}
+            checked={checkedTypes.scholarship}
             onChange={handleInputChange} />
         </label>
         </span>
@@ -33,7 +36,7 @@ return (
             type = "checkbox"
             name = "grant"
             id="grant"
-            checked={filterValues.grant}
+            checked={checkedTypes.grant}
             onChange={handleInputChange} />
         </label>
         </span>
@@ -43,7 +46,7 @@ return (
             type = "checkbox"
             name = "bursary"
             id="bursary"
-            checked={filterValues.bursary}
+            checked={checkedTypes.bursary}
             onChange={handleInputChange} />
         </label>
         </span>
@@ -53,7 +56,7 @@ return (
             type = "checkbox"
             name = "loan"
             id="loan"
-            checked={filterValues.loan}
+            checked={checkedTypes.loan}
             onChange={handleInputChange} />
         </label>
         </span>
