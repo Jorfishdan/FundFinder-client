@@ -2,13 +2,53 @@ import arrow from "../../assets/images/arrow2.png";
 import TypeMod from "../TypeMod/TypeMod";
 import { useState } from "react";
 
-function Filter({setPage}) {
+function Filter({setPage, filteredResults,setFilteredResults }) {
   const [openModal, setOpenModal] = useState(false);
+  const [filterValues, setFilterValues] =  useState({});
+  const [typeFilterValues, setTypeFilterValues] = useState ({
+    scholarship: false, 
+    grant: false,
+    bursary: false, 
+    loan: false
+  })
+
+  const [locationFilterValues, setLocationFilterValues] = useState ({
+    BC: false,
+    Manitoba: false,
+    Saskatchewan: false, 
+    Manitoba: false,
+    Brunswick: false,
+    NWT: false,
+    Yukon:false,
+    PEI: false,
+    Ontario: false,
+    Nunavut:false,
+    Quebec: false,
+    Newfoundland: false,
+    NS: false,
+
+  })
+
+  const [genderFilterValues, setGenderFilterValues] = useState ({
+    female: false, 
+    male: false, 
+    LGBTQIA:false,
+    other: false
+  })
+
+  const [datePostedFilterValues, setDatePostedFilterValues] = useState ({})
 
   function modalHandler() {
     setOpenModal(prevOpenModal => !prevOpenModal);
   }
 
+  function handleFilterSubmit(values) {
+    // do soemthing with the filter values
+    console.log(values)
+    setFilterValues(values);
+    setPage(filteredResults)
+    console.log("clicked")
+  }
   return (
     <>
       <section className="filter">
@@ -38,14 +78,7 @@ function Filter({setPage}) {
               className="filter__arrow"
             />
           </article>
-          <article className="filter__item">
-            Location
-            <img
-              src={arrow}
-              alt="down arrow to open options"
-              className="filter__arrow"
-            />
-          </article>
+         
           <article className="filter__item">
             Date Posted
             <img
@@ -54,10 +87,10 @@ function Filter({setPage}) {
               className="filter__arrow"
             />
           </article>
-          <button className="filter__search">Search</button>
+          <button className="filter__search" onClick={handleFilterSubmit}>Search</button>
           <button className="filter__reset">Reset</button>
         </div>
-        <TypeMod openModal ={openModal}  />
+        <TypeMod openModal ={openModal} filterValues={typeFilterValues} setFilterValues={setTypeFilterValues} />
       </section>
     </>
   );

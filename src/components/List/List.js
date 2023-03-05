@@ -18,6 +18,7 @@ export default function List() {
           <button className="list__items--buttons--hide">Delete</button>
         </div>
       </section>
+    
     </main>
   );
 }
