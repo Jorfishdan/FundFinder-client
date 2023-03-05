@@ -2,24 +2,29 @@ import Gears from "../../assets/icons/setting.png";
 import Email from "../../assets/icons/contact.png";
 import Logout from "../../assets/icons/logout.png";
 import Setting from "../Setting/Setting";
+import { useNavigate } from "react-router-dom";
 
+export default function Menu({ openMenu, setting, setSetting, user, setUser }) {
+  const navigate = useNavigate();
 
-export default function Menu({openMenu, setting, setSetting}) {
-
-  if(!openMenu)
-  return null
+  if (!openMenu) return null;
 
   function handleSetting() {
     setSetting(!setting);
   }
 
+  const handleLogout = (event) => {
+    setUser({});
+    if (Object.keys(user).length === 0) {
+      navigate("/");
+    }
+  };
+
   return (
     <main className="menu__container">
       <h1 className="menu__name">Hi, Username</h1>
       <div className="menu__box" onClick={() => handleSetting()}>
-        <p className="menu__label" >
-          Setting
-        </p>
+        <p className="menu__label">Setting</p>
         <img className="menu__img" src={Gears} alt="Setting Icon" />
       </div>
       <div className="menu__box">
@@ -30,7 +35,12 @@ export default function Menu({openMenu, setting, setSetting}) {
           alt="Contact Icon"
         />
       </div>
-      <div className="menu__box">
+      <div
+        className="menu__box"
+        onClick={(e) => {
+          handleLogout(e);
+        }}
+      >
         <p className="menu__label">Logout</p>
         <img
           className="menu__img  menu__img-logout"

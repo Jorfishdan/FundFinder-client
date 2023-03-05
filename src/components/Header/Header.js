@@ -5,7 +5,7 @@ import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import Dropmenu from "../Menu/Menu";
 
-export default function Header() {
+export default function Header({user, setUser}) {
   const [menu, setMenu] = useState(false)
   const [setting, setSetting] = useState(false);
 
@@ -41,7 +41,7 @@ export default function Header() {
         <button className="header__nav--sign" >Sign-up</button>
         <img onClick = {() => handleMenu()} className="header__nav--menu" src={Menu} alt="Menu icon"  />
       </section>
-      <Dropmenu openMenu={menu} setOpenMenu = {setMenu} setting={setting} setSetting={setSetting}/>
+      <Dropmenu openMenu={menu} setOpenMenu = {setMenu} setting={setting} setSetting={setSetting}  user={user} setUser={setUser}/>
     </header>
   );
 }

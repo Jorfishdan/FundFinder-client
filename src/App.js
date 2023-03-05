@@ -44,7 +44,7 @@ function App() {
             />
           }
         />
-        <Route path="/dashboard" element={<Homepage />} />
+        <Route path="/dashboard" element={<Homepage user={user} setUser={setUser} />} />
       </Routes>
     </Router>
   );
