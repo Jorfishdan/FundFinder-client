@@ -1,5 +1,8 @@
 import Header from "../components/Header/Header";
 import Footer from "../components/Footer/Footer";
+import emailjs from "@emailjs/browser";
+import { ToastContainer, toast } from "react-toastify";
+
 import { useState, useRef } from "react";
 import Dashboard from "../components/Dashboard/Dashboard";
 
@@ -55,23 +58,36 @@ export default function Contact() {
     return true;
   };
 
-  // const sendEmail = () => {
-  //   emailjs
-  //     .sendForm(
-  //       "service_zqy58a4",
-  //       "template_2ejr3tb",
-  //       formRef.current,ß
-  //       "OX5NrXu9_kJTaHFK_"
-  //     )
-  //     .then(
-  //       (result) => {
-  //         console.log(result.text);
-  //       },
-  //       (error) => {
-  //         console.log(error.text);
-  //       }
-  //     );
-  // };
+
+  const emailSent = () =>
+    toast.success("Your email has been sent!", {
+      position: "top-center",
+      autoClose: 2000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+    });
+
+  const sendEmail = () => {
+    emailjs
+      .sendForm(
+        "service_vzds7w6",
+        "template_6vzukpk",
+        formRef.current,
+        "OX5NrXu9_kJTaHFK_"
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
+  };
 
   const resetForm = () => {
     formRef.current.name.value = "";
@@ -94,8 +110,8 @@ export default function Contact() {
     if (!isMessageValid()) {
       setErrorMessage(true);
     } else {
-      // sendEmail();
-      // emailSent();
+      sendEmail();
+      emailSent();
       resetForm();
     }
   };
@@ -103,6 +119,7 @@ export default function Contact() {
     <>
       <Header />
       <section className="contact__main">
+      <ToastContainer className="toast" />
         <form className="contact__form" onSubmit={handleSubmit} ref={formRef}>
           <div className="contact__tablet">
             <h1 className="contact__title">Contact</h1>
@@ -150,28 +167,33 @@ export default function Contact() {
           </div>
           <div className="contact__message--box">
             <section className="contact__message--container">
-            <label className="contact__label">Message </label>
-            <textarea
-              placeholder="Your message here..."
-              cols="20"
-              rows="5"
-              className={`contact__message ${
-                errorMessage && message.length <= 0
-                  ? "contact__message--invalid"
-                  : ""
-              }`}
-              value={message}
-              onChange={handleMessage}
-              name="message"
-            ></textarea>
+              <label className="contact__label-message">Message </label>
+              <textarea
+                placeholder="Your message here..."
+                cols="20"
+                rows="5"
+                className={`contact__message ${
+                  errorMessage && message.length <= 0
+                    ? "contact__message--invalid"
+                    : ""
+                }`}
+                value={message}
+                onChange={handleMessage}
+                name="message"
+              ></textarea>
             </section>
             <section className="contact__button--container">
               <button className="contact__button" type="submit">
                 Send
               </button>
-              <button className="contact__button--cancel" type="submit">
+              <p
+                className="contact__button--cancel"
+                onClick={() => {
+                  resetForm();
+                }}
+              >
                 Cancel
-              </button>
+              </p>
             </section>
           </div>
         </form>

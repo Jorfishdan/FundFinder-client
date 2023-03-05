@@ -2,11 +2,18 @@
   &__main {
     display: flex;
   }
+
   &__form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     min-width: 850px;
     width: 80vw;
     height: 85vh;
-    background: $cream;
+    background-image: url("../assets/images/contact-img.png");
+    background-size: cover;
+    background-repeat: no-repeat;
     border: 1px solid $blue;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
     border-radius: 10px;
@@ -14,10 +21,11 @@
     margin-left: 2rem;
   }
   &__title {
-    color: $blue;
+    color: $grey;
+    font-size:3.3rem;
     text-decoration: underline;
     margin-top: 0.5rem;
-    margin-left: 2rem;
+    margin-left: -10rem;
   }
 
   &__tablet {
@@ -25,10 +33,16 @@
     flex-direction: column;
   }
   &__label {
-    margin-left: 2rem;
-    color: $blue;
+    margin-left: -10rem;
+    color: $grey;
     font-size: 1.8rem;
     margin-bottom: 0;
+
+    &-message {
+      color: $grey;
+      font-size: 1.8rem;
+      margin-bottom: 0;
+    }
   }
   &__input {
     background-color: $white;
@@ -41,11 +55,12 @@
     outline: none;
     border: none;
     margin: 2rem;
+    margin-left: -10rem;
     margin-top: 0;
     padding-left: 1rem;
 
     &--invalid {
-      border: 1px solid $red;
+      border: 1px solid red;
     }
   }
   &__message {
@@ -61,19 +76,15 @@
     outline: none;
     border: none;
     margin: 2rem;
+    margin-left: 0;
     margin-top: 0;
 
     &--invalid {
-      border: 1px solid $red;
+      border: 1px solid red;
     }
-
-    &--box{
-        display:flex;
-        
-    }
-    &--container{
-        display:flex;
-        flex-direction: column;
+    &--container {
+      display: flex;
+      flex-direction: column;
     }
   }
 
@@ -82,28 +93,28 @@
     justify-content: center;
     background-color: $white;
     color: $green;
-    width:15rem;
+    width: 15rem;
     font-size: 1.8rem;
     font-weight: 600;
     border: 1px solid $green;
     outline: none;
     border-radius: 10px;
-    margin:1rem;
+    margin: 1rem;
     padding: 1rem 8rem;
     box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
 
     &:hover {
       cursor: pointer;
     }
-    &--cancel{
-        @extend .contact__button;
-        color:$red;
-        border:1px solid $red;
+    &--cancel {
+      @extend .contact__button;
+      color: $red;
+      font-weight: 700;
+      border: 1px solid $red;
     }
-    &--container{
-        display:flex;
-        flex-direction: column;
-        justify-content: space-evenly;
+    &--container {
+      display: flex;
+      justify-content: space-evenly;
     }
   }
 }
