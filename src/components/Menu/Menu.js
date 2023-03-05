@@ -1,7 +1,7 @@
 import Gears from "../../assets/icons/setting.png";
 import Email from "../../assets/icons/contact.png";
 import Logout from "../../assets/icons/logout.png";
-import Home from '../../assets/icons/home.png'
+import Home from "../../assets/icons/home.png";
 import Setting from "../Setting/Setting";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
@@ -14,10 +14,13 @@ export default function Menu({
   setUser,
   isLoggedIn,
   setIsLoggedIn,
+  resetUser,
 }) {
   const navigate = useNavigate();
 
   if (!openMenu) return null;
+
+  const userName = resetUser.name || "Guest"
 
   function handleSetting() {
     setSetting(!setting);
@@ -32,13 +35,13 @@ export default function Menu({
     }
   };
 
-  const handleHome = ()=>{
-    navigate('/dashboard')
-  }
+  const handleHome = () => {
+    navigate("/dashboard");
+  };
 
   return (
     <main className="menu__container">
-      <h1 className="menu__name">Hi, Username</h1>
+      <h1 className="menu__name">Hi, {userName}</h1>
       <div className="menu__box" onClick={handleHome}>
         <p className="menu__label">Home</p>
         <img className="menu__img menu__img-home" src={Home} alt="Home Icon" />
@@ -70,7 +73,11 @@ export default function Menu({
           alt="Logout Icon"
         />
       </div>
-      <Setting openSetting={setting} isLoggedIn={isLoggedIn} />
+      <Setting
+        openSetting={setting}
+        isLoggedIn={isLoggedIn}
+        resetUser={resetUser}
+      />
     </main>
   );
 }
