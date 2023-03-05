@@ -62,8 +62,8 @@ export default function Menu({
       </div>
       <div
         className="menu__box"
-        onClick={(e) => {
-          handleLogout(e);
+        onClick={() => {
+          handleLogout();
         }}
       >
         <p className="menu__label">Logout</p>

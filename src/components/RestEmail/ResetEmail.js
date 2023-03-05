@@ -13,6 +13,8 @@ export default function ResetEmail({ resetEmail, resetUser }) {
   const id = resetUser.id;
   const formRef = useRef();
 
+  const currentEmail = resetUser.email || "New email here..."
+
   if (!resetEmail) return null;
 
   const emailReset = () =>
@@ -31,7 +33,7 @@ export default function ResetEmail({ resetEmail, resetUser }) {
     e.preventDefault();
 
     axios
-      .patch(`http://localhost:8080/users`, {
+      .patch(`http://localhost:8080/reset-email`, {
         id: id,
         email: formRef.current.email.value,
       })
@@ -49,7 +51,7 @@ export default function ResetEmail({ resetEmail, resetUser }) {
         <label className="reset__email--form--label">New Email</label>
         <input
           className="reset__email--form--input"
-          placeholder="New email here..."
+          placeholder={currentEmail}
           type="email"
           value={email}
           onChange={handleEmail}

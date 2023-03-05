@@ -9,7 +9,7 @@ import "./styles/styles.scss";
 import { ToastContainer } from "react-toastify";
 
 function App() {
-  const URL = process.env.REACT_APP_BASE_URL;
+  const URL = "http://localhost:8080";
   const login = "/login";
   const signup = "/signup";
   const[resetUser, setResetUser] = useState([])
@@ -27,6 +27,7 @@ function App() {
     getUserData();
   }, []);
 
+  console.log(resetUser.name)
 
   const [user, setUser] = useState({});
   const [isSignedUp, setIsSignedUp] = useState(false);
