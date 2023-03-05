@@ -8,6 +8,9 @@ export default function Homepage({
   isLoggedIn,
   setIsLoggedIn,
   resetUser,
+  userId,
+  currentEmail,
+  currentName,
 }) {
   return (
     <div>
@@ -17,6 +20,9 @@ export default function Homepage({
         isLoggedIn={isLoggedIn}
         setIsLoggedIn={setIsLoggedIn}
         resetUser={resetUser}
+        userId={userId}
+        currentEmail={currentEmail}
+        currentName={currentName}
       />
       <List />
       <Footer />

@@ -14,6 +14,8 @@ export default function Welcome({
   setIsSignedUp,
   URL,
   signup,
+  setCurrentEmail,
+  sestCurrentName
 }) {
   console.log("SIGNUP:", URL);
 

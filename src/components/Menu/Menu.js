@@ -15,10 +15,16 @@ export default function Menu({
   isLoggedIn,
   setIsLoggedIn,
   resetUser,
+  userId,
+  currentEmail,
+  currentName
 }) {
   const navigate = useNavigate();
 
   if (!openMenu) return null;
+
+
+  console.log(currentName)
 
   const userName = resetUser.name || "Guest"
 
@@ -77,6 +83,7 @@ export default function Menu({
         openSetting={setting}
         isLoggedIn={isLoggedIn}
         resetUser={resetUser}
+        userId={userId}
       />
     </main>
   );
