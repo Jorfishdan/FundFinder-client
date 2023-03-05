@@ -2,10 +2,49 @@ import { Link, useNavigate } from "react-router-dom";
 import WelcomeImg from "../../assets/images/welcome.svg";
 import Logo from "../../assets/icons/logo/logo2.png";
 import jwt_decode from "jwt-decode";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
+import axios from "axios";
+import { toast } from "react-toastify";
 
-export default function Welcome({ user, setUser }) {
+export default function Welcome({
+  user,
+  setUser,
+  isLoggedIn,
+  setIsLoggedIn,
+  URL,
+  login,
+}) {
   const navigate = useNavigate();
+  const formRef = useRef();
+
+  const handleLogin = (e) => {
+    e.preventDefault();
+
+    const form = formRef.current;
+    const email = form.email.value;
+    const password = form.password.value;
+
+    if (!email || !password) {
+      toast.error("Please fill in all fields");
+      return;
+    }
+
+    axios
+      .post(`${URL}/users${login}`, {
+        email: email,
+        password: password,
+      })
+      .then(() => {
+        setIsLoggedIn(true);
+        toast.success("Login successful");
+        navigate("/dashboard");
+        form.reset();
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
   const handleCallbackResponse = (response) => {
     console.log("Encoded JWT ID token:" + response.credential);
     const userObject = jwt_decode(response.credential);
@@ -46,32 +85,35 @@ export default function Welcome({ user, setUser }) {
           <br></br>DON'T LET FINANCIAL BARRIES HOLD YOU BACK - LET US HELP YOU
           FIND THE FUNDING YOU NEED TO PURSUE YOUR DREAMS
         </p>
-        <form className="main__signin">
+        <form className="main__signin" onSubmit={handleLogin} ref={formRef}>
           <label className="main__signin--label">Email</label>
           <input
             className="main__signin--input"
             placeholder="Email..."
             type="email"
+            name="email"
           ></input>
           <label className="main__signin--label">Password</label>
           <input
             className="main__signin--input"
             placeholder="Password..."
             type="password"
+            name="password"
           ></input>
           <button className="main__signin--button">Sign In</button>
           <hr></hr>
           <section className="main__google">
-          <div id="signInDiv" className="main__google--box"></div>
-          {/* <button onClick={(e)=> handleSignOut(e)}>Sign Out</button> */}
-        </section>
+            <div id="signInDiv" className="main__google--box"></div>
+          </section>
           <Link to="/dashboard" className="main__google--guest">
             CONTINUE AS GUEST
           </Link>
         </form>
-     
+
         <section className="main__button">
-         <Link to='/signup' className="main__button--link"><p className="main__button--signup">SIGN UP</p></Link> 
+          <Link to="/signup" className="main__button--link">
+            <p className="main__button--signup">SIGN UP</p>
+          </Link>
           <p className="main__button--forgot">FORGOT PASSWORD?</p>
         </section>
       </section>

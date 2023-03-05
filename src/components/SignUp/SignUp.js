@@ -4,7 +4,7 @@ import Logo from "../../assets/icons/logo/logo2.png";
 import jwt_decode from "jwt-decode";
 import { useEffect, useRef } from "react";
 import axios from "axios";
-import { ToastContainer, toast } from "react-toastify";
+import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 export default function Welcome({
@@ -15,23 +15,21 @@ export default function Welcome({
   URL,
   signup,
 }) {
-
-  console.log('SIGNUP:',URL);
+  console.log("SIGNUP:", URL);
 
   const navigate = useNavigate();
   const formRef = useRef();
 
-  const form = formRef.current;
-
   const handleSignup = (e) => {
     e.preventDefault();
 
+    const form = formRef.current;
     const name = form.name.value;
     const email = form.email.value;
     const password = form.password.value;
 
     if (!name || !email || !password) {
-      alert("Please fill in all fields");
+      toast.error("Please fill in all fields");
       return;
     }
 
@@ -43,16 +41,13 @@ export default function Welcome({
       })
       .then(() => {
         setIsSignedUp(true);
-
-        if (isSignedUp) {
-          toast("Sign up successful");
-          navigate("/login");
-        }
+        toast.success("Sign up successful");
+        navigate("/");
+        form.reset();
       })
       .catch((err) => {
         console.log(err);
       });
-    form.reset();
   };
 
   const handleCallbackResponse = (response) => {
@@ -75,8 +70,6 @@ export default function Welcome({
       size: "large",
     });
   }, []);
-
-  useEffect(() => {});
 
   // useEffect(() => {
   //   if (user) {
@@ -123,25 +116,11 @@ export default function Welcome({
           <hr></hr>
           <section className="main__google">
             <div id="signInDiv" className="main__google--box"></div>
-            {/* <button onClick={(e)=> handleSignOut(e)}>Sign Out</button> */}
           </section>
           <Link to="/dashboard" className="main__google--guest">
             CONTINUE AS GUEST
           </Link>
-          <ToastContainer
-            position="bottom-right"
-            autoClose={5000}
-            hideProgressBar={false}
-            newestOnTop={false}
-            closeOnClick
-            rtl={false}
-            pauseOnFocusLoss
-            draggable
-            pauseOnHover
-            theme="light"
-          />
         </form>
-
         <section className="main__button">
           <Link to="/" className="main__button--link">
             <p className="main__button--signup">Login</p>

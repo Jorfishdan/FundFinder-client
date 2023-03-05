@@ -1,10 +1,11 @@
 import Landing from "./components/Landing/Landing";
 import Homepage from "./pages/Homepage";
-import Contact from "./pages/Contact";
 import Signup from "./components/SignUp/SignUp";
+import Contact from "./pages/Contact";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { useState } from "react";
 import "./styles/styles.scss";
+import { ToastContainer } from "react-toastify";
 
 function App() {
   const URL = process.env.REACT_APP_BASE_URL;
@@ -18,6 +19,7 @@ function App() {
   console.log("APP:", URL);
   return (
     <Router>
+      <ToastContainer position="top-left" />
       <Routes>
         <Route
           path="/"
@@ -28,6 +30,7 @@ function App() {
               isLoggedIn={isLoggedIn}
               setIsLoggedIn={setIsLoggedIn}
               URL={URL}
+              login={login}
             />
           }
         />
