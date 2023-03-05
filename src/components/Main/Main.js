@@ -1,4 +1,3 @@
-import "./Main.scss";
 import List from "../List/List";
 import Dashboard from "../Dashboard/Dashboard";
 

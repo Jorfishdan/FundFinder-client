@@ -1,5 +1,4 @@
-import "./List.scss";
-import React, { useState } from "react";
+import React from "react";
 import Filter from "../Filter/Filter";
 
 export default function List() {

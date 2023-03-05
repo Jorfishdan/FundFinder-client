@@ -1,0 +1,18 @@
+@import "./typography";
+@import "./variables";
+@import "./resets";
+
+
+
+//pages
+
+//components
+@import '../components/Dashboard/Dashboard.scss';
+@import '../components/Filter/Filter.scss';
+@import '../components/Header/Header.scss';
+@import '../components/Landing/Landing.scss';
+@import '../components/List/List.scss';
+@import '../components/Main/Main.scss';
+@import '../components/SignUp/SignUp.scss';
+@import '../components/Menu/Menu.scss';
+@import '../components/Setting/Setting.scss';

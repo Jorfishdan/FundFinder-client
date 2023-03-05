@@ -1,4 +1,3 @@
-import "./Filter.scss";
 import arrow from "../../assets/images/arrow2.png";
 import TypeMod from "../TypeMod/TypeMod";
 import { useState } from "react";
