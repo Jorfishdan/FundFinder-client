@@ -12,20 +12,23 @@ const [filteredResults, setFilteredResults] = useState(null)
        <Filter setPage={setPage} setFilteredResults={setFilteredResults} filteredResults={filteredResults}/>
       {/* <h1 className="list__title">Current Postings</h1> */}
       {filteredResults ? (
-      <section className="list__items">
+        <>
         {filteredResults.map((result) => (
-        <div key={result.id} className="list__items--box">
+      <section key={result.id} className="list__items">
+        {/* {filteredResults.map((result) => ( */}
+        <div lassName="list__items--box">
           <h1 className="list__items--title">{result.name}</h1>
           <h2 className="list__items--deadline">{result.due}</h2>
-       
         <div className="list__items--buttons">
           <button className="list__items--buttons--save">Save</button>
           <button className="list__items--buttons--apply">Apply</button>
           <button className="list__items--buttons--hide">Delete</button>
+          </div>
         </div>
-        </div>
-        ))}
+      
       </section>
+       ))}
+       </>
       ) : (
         <p> Loading...</p>
         )}
