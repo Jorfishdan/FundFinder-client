@@ -125,7 +125,9 @@ export default function Welcome({
           <Link to="/" className="main__button--link">
             <p className="main__button--signup">Login</p>
           </Link>
-          <p className="main__button--forgot">FORGOT PASSWORD?</p>
+          <Link to="/reset-password" className="main__button--link">
+            <p className="main__button--forgot">FORGOT PASSWORD?</p>
+          </Link>
         </section>
       </section>
       <img className="main__img" src={WelcomeImg} alt="Growing money" />
