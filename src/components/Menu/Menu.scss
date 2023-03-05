@@ -1,5 +1,8 @@
 .menu{
     &__container{
+        position:absolute;
+        right:0;
+        top:8rem;
         text-align: center;
         width:8vw;
         min-width:17rem;

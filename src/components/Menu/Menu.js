@@ -2,10 +2,12 @@ import Gears from "../../assets/icons/setting.png";
 import Email from "../../assets/icons/contact.png";
 import Logout from "../../assets/icons/logout.png";
 import Setting from "../Setting/Setting";
-import { useState } from "react";
 
-export default function Menu() {
-  const [setting, setSetting] = useState(false);
+
+export default function Menu({openMenu, setting, setSetting}) {
+
+  if(!openMenu)
+  return null
 
   function handleSetting() {
     setSetting(!setting);

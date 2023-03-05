@@ -19,12 +19,13 @@
     height: 5rem;
     display: flex;
     justify-content: space-between;
-    margin-right: 3rem;
+    margin-right: 10rem;
     align-self: center;
 
     &--menu {
       height: 4rem;
       align-self: center;
+      margin-right:-2.5rem;
       &:hover{
         cursor: pointer;
     }
