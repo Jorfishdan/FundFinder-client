@@ -1,4 +1,7 @@
 // import "./Dashboard.scss";
+import Filter from "../Filter/Filter";
+
+import { useState } from "react";
 
 export default function Dashboard() {
   return (
