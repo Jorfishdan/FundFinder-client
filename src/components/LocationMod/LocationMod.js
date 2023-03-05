@@ -1,5 +1,4 @@
 import { useState } from "react";
-import "./LocationMod.scss";
 function LocationMod({
   openModal,
   checkedLocation,
