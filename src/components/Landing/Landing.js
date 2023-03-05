@@ -45,14 +45,13 @@ export default function Welcome({
       });
   };
 
-  const handleCallbackResponse = (response) => {
-    console.log("Encoded JWT ID token:" + response.credential);
-    const userObject = jwt_decode(response.credential);
-    console.log(userObject);
-    setUser(userObject);
-  };
-
   useEffect(() => {
+    const handleCallbackResponse = (response) => {
+      console.log("Encoded JWT ID token:" + response.credential);
+      const userObject = jwt_decode(response.credential);
+      console.log(userObject);
+      setUser(userObject);
+    };
     /* global google */
     google.accounts.id.initialize({
       client_id:
@@ -64,15 +63,13 @@ export default function Welcome({
       theme: "outline",
       size: "large",
     });
-  }, []);
+  }, [setUser]);
 
-  // useEffect(() => {
-  //   if (user) {
-  //     navigate("/dashboard");
-  //   } else {
-  //     navigate("/");
-  //   }
-  // }, [user, navigate]);
+  if (user) {
+    navigate("/dashboard");
+  } else {
+    navigate("/");
+  }
 
   return (
     <main className="main__container">

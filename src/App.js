@@ -45,7 +45,17 @@ function App() {
             />
           }
         />
-        <Route path="/dashboard" element={<Homepage />} />
+        <Route
+          path="/dashboard"
+          element={
+            <Homepage
+              user={user}
+              setUser={setUser}
+              isLoggedIn={isLoggedIn}
+              setIsLoggedIn={setIsLoggedIn}
+            />
+          }
+        />
         <Route path="/contact" element={<Contact />} />{" "}
       </Routes>
     </Router>
