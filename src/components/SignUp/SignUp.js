@@ -2,10 +2,59 @@ import { Link, useNavigate } from "react-router-dom";
 import WelcomeImg from "../../assets/images/welcome.svg";
 import Logo from "../../assets/icons/logo/logo2.png";
 import jwt_decode from "jwt-decode";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
+import axios from "axios";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
-export default function Welcome({ user, setUser }) {
+export default function Welcome({
+  user,
+  setUser,
+  isSignedUp,
+  setIsSignedUp,
+  URL,
+  signup,
+}) {
+
+  console.log('SIGNUP:',URL);
+
   const navigate = useNavigate();
+  const formRef = useRef();
+
+  const form = formRef.current;
+
+  const handleSignup = (e) => {
+    e.preventDefault();
+
+    const name = form.name.value;
+    const email = form.email.value;
+    const password = form.password.value;
+
+    if (!name || !email || !password) {
+      alert("Please fill in all fields");
+      return;
+    }
+
+    axios
+      .post(`${URL}/users${signup}`, {
+        name: name,
+        email: email,
+        password: password,
+      })
+      .then(() => {
+        setIsSignedUp(true);
+
+        if (isSignedUp) {
+          toast("Sign up successful");
+          navigate("/login");
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+    form.reset();
+  };
+
   const handleCallbackResponse = (response) => {
     console.log("Encoded JWT ID token:" + response.credential);
     const userObject = jwt_decode(response.credential);
@@ -27,6 +76,8 @@ export default function Welcome({ user, setUser }) {
     });
   }, []);
 
+  useEffect(() => {});
+
   // useEffect(() => {
   //   if (user) {
   //     navigate("/dashboard");
@@ -46,38 +97,55 @@ export default function Welcome({ user, setUser }) {
           <br></br>DON'T LET FINANCIAL BARRIES HOLD YOU BACK - LET US HELP YOU
           FIND THE FUNDING YOU NEED TO PURSUE YOUR DREAMS
         </p>
-        <form className="main__signin">
-        <label className="main__signin--label">Name</label>
+        <form className="main__signin" onSubmit={handleSignup} ref={formRef}>
+          <label className="main__signin--label">Name</label>
           <input
             className="main__signin--input"
-            placeholder="Email..."
-            type="email"
+            placeholder="Name..."
+            type="name"
+            name="name"
           ></input>
           <label className="main__signin--label">Email</label>
           <input
             className="main__signin--input"
             placeholder="Email..."
             type="email"
+            name="email"
           ></input>
           <label className="main__signin--label">Password</label>
           <input
             className="main__signin--input"
             placeholder="Password..."
             type="password"
+            name="password"
           ></input>
-          <button className="main__signin--button">Sign In</button>
+          <button className="main__signin--button">Sign Up</button>
           <hr></hr>
           <section className="main__google">
-          <div id="signInDiv" className="main__google--box"></div>
-          {/* <button onClick={(e)=> handleSignOut(e)}>Sign Out</button> */}
-        </section>
+            <div id="signInDiv" className="main__google--box"></div>
+            {/* <button onClick={(e)=> handleSignOut(e)}>Sign Out</button> */}
+          </section>
           <Link to="/dashboard" className="main__google--guest">
             CONTINUE AS GUEST
           </Link>
+          <ToastContainer
+            position="bottom-right"
+            autoClose={5000}
+            hideProgressBar={false}
+            newestOnTop={false}
+            closeOnClick
+            rtl={false}
+            pauseOnFocusLoss
+            draggable
+            pauseOnHover
+            theme="light"
+          />
         </form>
-     
+
         <section className="main__button">
-         <Link to='/'><p className="main__button--signup">Login</p></Link> 
+          <Link to="/" className="main__button--link">
+            <p className="main__button--signup">Login</p>
+          </Link>
           <p className="main__button--forgot">FORGOT PASSWORD?</p>
         </section>
       </section>
