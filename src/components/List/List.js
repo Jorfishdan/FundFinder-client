@@ -2,9 +2,10 @@ import React from "react";
 import Filter from "../Filter/Filter";
 
 export default function List() {
+
   return (
     <main className="list__container">
-        <Filter/>
+        <Filter />
       {/* <h1 className="list__title">Current Postings</h1> */}
       <section className="list__items">
         <div className="list__items--box">
