@@ -2,12 +2,11 @@ import arrow from "../../assets/images/arrow2.png";
 import TypeMod from "../TypeMod/TypeMod";
 import LocationMod from "../LocationMod/LocationMod";
 import GenderMod from "../GenderMod/GenderMod";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import axios from 'axios';
+import { v4 as uuidv4 } from "uuid";
 
 function Filter({setPage, filteredResults, setFilteredResults }) {
-
- 
 
   const [openModal, setOpenModal] = useState(false);
   const [openModalLocation, setOpenModalLocation] = useState(false);
@@ -66,28 +65,25 @@ function Filter({setPage, filteredResults, setFilteredResults }) {
     setPage(filteredResults)
     console.log(filterValues)
 
-    axios
-    .post(`http://localhost:8080/funding`)
-    .then((response) => {
-      setFilteredResults(response.data);
-      console.log(response.data)
-      setPage(response.data);
-    })
-    .catch((error) => {
-      console.error(error);
-    });
-
-    axios
-  .get(`http://localhost:8080/funding`)
-  .then((response) => {
-    setFilteredResults(response.data);
-    console.log(response.data)
-    setPage(response.data);
-  })
-  .catch((error) => {
-    console.error(error);
-  });
   }
+
+  useEffect(() => {
+    axios.post(`http://localhost:8080/funding`, {
+      id: uuidv4(),
+      type:checkedTypes,
+      location:checkedLocation,
+      gender:checkedGender,
+
+    })
+    .then(response => {
+      console.log("received response:", response.data);
+     
+    })
+    .catch(error => {
+      console.error("error:", error);
+    });
+  }, [handleFilterSubmit]); 
+  
 
   return (
     <>
@@ -148,3 +144,16 @@ export default Filter;
   // .filter((query) => query !== null)
   // .join("&");
   // `http://localhost:8080?${queryString}`
+
+  //////////GET REQUEST //////////////////
+
+  //   axios
+  // .get(`http://localhost:8080/funding`)
+  // .then((response) => {
+  //   setFilteredResults(response.data);
+  //   console.log(response.data)
+  //   setPage(response.data);
+  // })
+  // .catch((error) => {
+  //   console.error(error);
+  // });
