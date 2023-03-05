@@ -38,7 +38,7 @@ return (
             type = "checkbox"
             name = "grant"
             id="grant"
-            checked={filterValues.grants}
+            checked={filterValues.grant}
             onChange={handleInputChange} />
         </label>
         </span>

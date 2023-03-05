@@ -1,9 +1,12 @@
 import arrow from "../../assets/images/arrow2.png";
 import TypeMod from "../TypeMod/TypeMod";
+import LocationMod from "../LocationMod/LocationMod";
 import { useState } from "react";
 
 function Filter({setPage, filteredResults,setFilteredResults }) {
+
   const [openModal, setOpenModal] = useState(false);
+  const [openModalLocation, setOpenModalLocation] = useState(false)
   const [filterValues, setFilterValues] =  useState({});
   const [typeFilterValues, setTypeFilterValues] = useState ({
     scholarship: false, 
@@ -16,7 +19,6 @@ function Filter({setPage, filteredResults,setFilteredResults }) {
     BC: false,
     Manitoba: false,
     Saskatchewan: false, 
-    Manitoba: false,
     Brunswick: false,
     NWT: false,
     Yukon:false,
@@ -38,12 +40,15 @@ function Filter({setPage, filteredResults,setFilteredResults }) {
 
   const [datePostedFilterValues, setDatePostedFilterValues] = useState ({})
 
-  function modalHandler() {
+  function typeHandler() {
     setOpenModal(prevOpenModal => !prevOpenModal);
+  }
+  function locationHandler() {
+    setOpenModalLocation(prevOpenModalLocation => !prevOpenModalLocation);
   }
 
   function handleFilterSubmit(values) {
-    // do soemthing with the filter values
+    // do something with the filter values
     console.log(values)
     setFilterValues(values);
     setPage(filteredResults)
@@ -59,7 +64,7 @@ function Filter({setPage, filteredResults,setFilteredResults }) {
               src={arrow}
               alt="down arrow to open options"
               className="filter__arrow"
-              onClick = {() => modalHandler()}
+              onClick = {typeHandler}
             />
           </article>
           <article className="filter__item">
@@ -68,6 +73,7 @@ function Filter({setPage, filteredResults,setFilteredResults }) {
               src={arrow}
               alt="down arrow to open options"
               className="filter__arrow"
+              onClick = {locationHandler}
             />
           </article>
           <article className="filter__item">
@@ -91,6 +97,7 @@ function Filter({setPage, filteredResults,setFilteredResults }) {
           <button className="filter__reset">Reset</button>
         </div>
         <TypeMod openModal ={openModal} filterValues={typeFilterValues} setFilterValues={setTypeFilterValues} />
+        <LocationMod openModal ={openModalLocation}  filterValues={locationFilterValues} setFilterValues={setLocationFilterValues} />
       </section>
     </>
   );
