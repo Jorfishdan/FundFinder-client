@@ -28,13 +28,13 @@ export default function Welcome({ user, setUser }) {
     });
   }, []);
 
-  useEffect(() => {
-    if (user) {
-      navigate("/dashboard");
-    } else {
-      navigate("/");
-    }
-  }, [user, navigate]);
+  // useEffect(() => {
+  //   if (user) {
+  //     navigate("/dashboard");
+  //   } else {
+  //     navigate("/");
+  //   }
+  // }, [user, navigate]);
 
   return (
     <main className="main__container">
