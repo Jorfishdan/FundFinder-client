@@ -20,16 +20,34 @@ function Filter({setPage, filteredResults, setFilteredResults }) {
     loan: false
   })
 
+  const [checkedLocation, setCheckedLocation] = useState ({
+    BC: false,
+    Manitoba: false,
+    Saskatchewan: false,
+    Brunswick: false,
+    NWT: false,
+    Yukon: false,
+    PEI: false,
+    Ontario: false,
+    Nunavut: false,
+    Quebec: false,
+    Newfoundland: false,
+    NS: false,
+  })
  
   function typeHandler() {
     setOpenModal(prevOpenModal => !prevOpenModal);
+  }
+
+  function locationHandler() {
+    setOpenModalLocation(prevOpenModalLocation  => !prevOpenModalLocation);
   }
 
   
   function handleFilterSubmit() {
     const filterValues = {
       type: checkedTypes,
-      // location: locationFilterValues,
+      location: checkedLocation,
       // gender: genderFilterValues,
     }
     setFilterValues(filterValues);
@@ -55,7 +73,7 @@ function Filter({setPage, filteredResults, setFilteredResults }) {
               src={arrow}
               alt="down arrow to open options"
               className="filter__arrow"
-              // onClick = {locationHandler}
+              onClick = {locationHandler}
             />
           </article>
           <article className="filter__item">
@@ -72,7 +90,7 @@ function Filter({setPage, filteredResults, setFilteredResults }) {
           <button className="filter__reset">Reset</button>
         </div>
         <TypeMod openModal ={openModal} checkedTypes={checkedTypes} setCheckedTypes={setCheckedTypes} />
-        {/* <LocationMod openModal ={openModalLocation} filterValues={locationFilterValues} setFilterValues={setLocationFilterValues} /> */}
+        <LocationMod openModal ={openModalLocation} checkedLocation={checkedLocation} setCheckedLocation={setCheckedLocation} />
         {/* <GenderMod openModal ={openModalGender} filterValues={genderFilterValues} setFilterValues={setGenderFilterValues} /> */}
       </section>
     </>

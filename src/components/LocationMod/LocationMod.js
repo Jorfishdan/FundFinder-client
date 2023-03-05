@@ -2,27 +2,27 @@ import { useState } from "react";
 import "./LocationMod.scss";
 function LocationMod({
   openModal,
-  locationFilterValues,
-  setLocationFilterValues,
+  checkedLocation,
+  setCheckedLocation,
 }) {
-  const [filterValues, setFilterValues] = useState({
-    BC: false,
-    Manitoba: false,
-    Saskatchewan: false,
-    Brunswick: false,
-    NWT: false,
-    Yukon: false,
-    PEI: false,
-    Ontario: false,
-    Nunavut: false,
-    Quebec: false,
-    Newfoundland: false,
-    NS: false,
-  });
+  // const [filterValues, setFilterValues] = useState({
+  //   BC: false,
+  //   Manitoba: false,
+  //   Saskatchewan: false,
+  //   Brunswick: false,
+  //   NWT: false,
+  //   Yukon: false,
+  //   PEI: false,
+  //   Ontario: false,
+  //   Nunavut: false,
+  //   Quebec: false,
+  //   Newfoundland: false,
+  //   NS: false,
+  // });
   const handleInputChange = (event) => {
     const { name, checked } = event.target;
-    setFilterValues((prevFilterValues) => ({
-      ...prevFilterValues,
+    setCheckedLocation((prevCheckedLocation) => ({
+      ...prevCheckedLocation,
       [name]: checked,
     }));
   };
@@ -38,7 +38,7 @@ function LocationMod({
                 type="checkbox"
                 name="BC"
                 id="BC"
-                checked={filterValues.BC}
+                checked={checkedLocation.BC}
                 onChange={handleInputChange}
               />
             </label>
@@ -50,7 +50,7 @@ function LocationMod({
                 type="checkbox"
                 name="Manitoba"
                 id="Manitoba"
-                checked={filterValues.Manitoba}
+                checked={checkedLocation.Manitoba}
                 onChange={handleInputChange}
               />
             </label>
@@ -62,7 +62,7 @@ function LocationMod({
                 type="checkbox"
                 name="Saskatchewan"
                 id="Saskatchewan"
-                checked={filterValues.Saskatchewan}
+                checked={checkedLocation.Saskatchewan}
                 onChange={handleInputChange}
               />
             </label>
@@ -74,7 +74,7 @@ function LocationMod({
                 type="checkbox"
                 name="Brunswick"
                 id="Brunswick"
-                checked={filterValues.Brunswick}
+                checked={checkedLocation.Brunswick}
                 onChange={handleInputChange}
               />
             </label>
@@ -86,7 +86,7 @@ function LocationMod({
                 type="checkbox"
                 name="NWT"
                 id="NWT"
-                checked={filterValues.NWT}
+                checked={checkedLocation.NWT}
                 onChange={handleInputChange}
               />
             </label>
@@ -98,7 +98,7 @@ function LocationMod({
                 type="checkbox"
                 name="Yukon"
                 id="Yukon"
-                checked={filterValues.Yukon}
+                checked={checkedLocation.Yukon}
                 onChange={handleInputChange}
               />
             </label>
@@ -110,7 +110,7 @@ function LocationMod({
                 type="checkbox"
                 name="PEI"
                 id="PEI"
-                checked={filterValues.PEI}
+                checked={checkedLocation.PEI}
                 onChange={handleInputChange}
               />
             </label>
@@ -122,7 +122,7 @@ function LocationMod({
                 type="checkbox"
                 name="Ontario"
                 id="Ontario"
-                checked={filterValues.Ontario}
+                checked={checkedLocation.Ontario}
                 onChange={handleInputChange}
               />
             </label>
@@ -134,7 +134,7 @@ function LocationMod({
                 type="checkbox"
                 name="Nunavut"
                 id="Nunavut"
-                checked={filterValues.Nunavut}
+                checked={checkedLocation.Nunavut}
                 onChange={handleInputChange}
               />
             </label>
@@ -146,7 +146,7 @@ function LocationMod({
                 type="checkbox"
                 name="Quebec"
                 id="Quebec"
-                checked={filterValues.Quebec}
+                checked={checkedLocation.Quebec}
                 onChange={handleInputChange}
               />
             </label>
@@ -158,7 +158,7 @@ function LocationMod({
                 type="checkbox"
                 name="Newfoundland"
                 id="Newfoundland"
-                checked={filterValues.Newfoundland}
+                checked={checkedLocation.Newfoundland}
                 onChange={handleInputChange}
               />
             </label>
@@ -170,7 +170,7 @@ function LocationMod({
                 type="checkbox"
                 name="NS"
                 id="NS"
-                checked={filterValues.NS}
+                checked={checkedLocation.NS}
                 onChange={handleInputChange}
               />
             </label>
