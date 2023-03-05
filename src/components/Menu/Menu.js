@@ -1,6 +1,7 @@
 import Gears from "../../assets/icons/setting.png";
 import Email from "../../assets/icons/contact.png";
 import Logout from "../../assets/icons/logout.png";
+import Home from '../../assets/icons/home.png'
 import Setting from "../Setting/Setting";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
@@ -20,7 +21,6 @@ export default function Menu({
 
   function handleSetting() {
     setSetting(!setting);
-  
   }
 
   const handleLogout = (event) => {
@@ -32,15 +32,25 @@ export default function Menu({
     }
   };
 
+  const handleHome = ()=>{
+    navigate('/dashboard')
+  }
+
   return (
     <main className="menu__container">
       <h1 className="menu__name">Hi, Username</h1>
+      <div className="menu__box" onClick={handleHome}>
+        <p className="menu__label">Home</p>
+        <img className="menu__img menu__img-home" src={Home} alt="Home Icon" />
+      </div>
       <div className="menu__box" onClick={() => handleSetting()}>
         <p className="menu__label">Setting</p>
         <img className="menu__img" src={Gears} alt="Setting Icon" />
       </div>
       <div className="menu__box">
-        <Link to ="/contact" className="menu__label">Contact</Link>
+        <Link to="/contact" className="menu__label">
+          Contact
+        </Link>
         <img
           className="menu__img  menu__img-contact"
           src={Email}
