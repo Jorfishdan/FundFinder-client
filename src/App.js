@@ -1,6 +1,7 @@
 import Landing from "./components/Landing/Landing";
 import Homepage from "./pages/Homepage";
 import Signup from "./components/SignUp/SignUp";
+import Contact from "./pages/Contact";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { useState } from "react";
 import "./styles/styles.scss";
@@ -55,6 +56,7 @@ function App() {
             />
           }
         />
+        <Route path="/contact" element={<Contact />} />{" "}
       </Routes>
     </Router>
   );

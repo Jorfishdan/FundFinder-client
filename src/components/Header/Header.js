@@ -26,6 +26,7 @@ export default function Header({ user, setUser, isLoggedIn, setIsLoggedIn }) {
 
   function handleMenu() {
     setMenu(!menu);
+    setSetting(false);
   }
   return (
     <header className="header__container" ref={menuRef}>

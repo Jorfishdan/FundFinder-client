@@ -4,6 +4,7 @@ import Logout from "../../assets/icons/logout.png";
 import Setting from "../Setting/Setting";
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
+import { Link } from "react-router-dom";
 
 export default function Menu({
   openMenu,
@@ -20,6 +21,7 @@ export default function Menu({
 
   function handleSetting() {
     setSetting(!setting);
+  
   }
 
   const handleLogout = (event) => {
@@ -39,7 +41,7 @@ export default function Menu({
         <img className="menu__img" src={Gears} alt="Setting Icon" />
       </div>
       <div className="menu__box">
-        <p className="menu__label">Contact</p>
+        <Link to ="/contact" className="menu__label">Contact</Link>
         <img
           className="menu__img  menu__img-contact"
           src={Email}
