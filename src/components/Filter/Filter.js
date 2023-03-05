@@ -64,25 +64,41 @@ function Filter({setPage, filteredResults, setFilteredResults }) {
     setFilteredResults(filterValues);
     setPage(filteredResults)
     console.log(filterValues)
+    sendFilterData()
 
   }
 
-  useEffect(() => {
+  function sendFilterData() {
     axios.post(`http://localhost:8080/funding`, {
       id: uuidv4(),
       type:checkedTypes,
       location:checkedLocation,
       gender:checkedGender,
-
     })
     .then(response => {
       console.log("received response:", response.data);
-     
     })
     .catch(error => {
       console.error("error:", error);
     });
-  }, [handleFilterSubmit]); 
+  }
+
+  // useEffect(() => {
+  //   axios.post(`http://localhost:8080/funding`, {
+  //     id: uuidv4(),
+  //     type:checkedTypes,
+  //     location:checkedLocation,
+  //     gender:checkedGender,
+
+  //   })
+  //   .then(response => {
+  //     console.log("received response:", response.data);
+     
+  //   })
+  //   .catch(error => {
+  //     console.error("error:", error);
+  //   });
+  // }, []); 
   
 
   return (
