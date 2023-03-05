@@ -61,17 +61,16 @@ export default function Welcome({ user, setUser }) {
             type="password"
           ></input>
           <button className="main__signin--button">Sign In</button>
-          <Link to="/dashboard" className="main__signin--guest">
-            CONTINUE AS GUEST
-          </Link>
-        </form>
-        <section className="main__google">
-          <div id="signInDiv"></div>
+          <hr></hr>
+          <section className="main__google">
+          <div id="signInDiv" className="main__google--box"></div>
+          {/* <button onClick={(e)=> handleSignOut(e)}>Sign Out</button> */}
+        </section>
           <Link to="/dashboard" className="main__google--guest">
             CONTINUE AS GUEST
           </Link>
-          {/* <button onClick={(e)=> handleSignOut(e)}>Sign Out</button> */}
-        </section>
+        </form>
+     
         <section className="main__button">
           <p className="main__button--signup">SIGN UP</p>
           <p className="main__button--forgot">FORGOT PASSWORD?</p>
