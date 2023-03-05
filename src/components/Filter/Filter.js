@@ -25,36 +25,6 @@ function Filter({setPage, filteredResults, setFilteredResults }) {
     setOpenModal(prevOpenModal => !prevOpenModal);
   }
 
-  // function handleTypeFilterChange(values) {
-  //   setTypeFilterValues(values)
-  // }
-
-  // function handleFilterSubmit() {
-  //   const filteredResults = allResults.filter(result => {
-  //     let typeMatch = true;
-  //     if (filterValues.type.scholarship) {
-  //       typeMatch = typeMatch && result.type === "Scholarship";
-  //     }
-  //     if (filterValues.type.grant) {
-  //       typeMatch = typeMatch && result.type === "Grant";
-  //     }
-  //     if (filterValues.type.bursary) {
-  //       typeMatch = typeMatch && result.type === "Bursary";
-  //     }
-  //     if (filterValues.type.loan) {
-  //       typeMatch = typeMatch && result.type === "Loan";
-  //     }
-      
-  
-      
-  //     return typeMatch;
-  //   });
-
-    
-  //   setFilteredResults(filteredResults);
-  // setPage(1);
-  // setOpenModal(false);
-  // }
   
   function handleFilterSubmit() {
     const filterValues = {
@@ -110,23 +80,3 @@ function Filter({setPage, filteredResults, setFilteredResults }) {
 }
 
 export default Filter;
-
-///////////LOCATION CODE FOR SUMBIT/////////////////
-
-   // let locationMatch = true;
-      // if (filterValues.location.BC) {
-      //   locationMatch = locationMatch && result.location === "BC";
-      // }
-      // if (filterValues.location.Manitoba) {
-      //   locationMatch = locationMatch && result.location === "Manitoba";
-      // }
-      // Add more location filters here
-      
-      // let genderMatch = true;
-      // if (filterValues.gender.female) {
-      //   genderMatch = genderMatch && result.gender === "Female";
-      // }
-      // if (filterValues.gender.male) {
-      //   genderMatch = genderMatch && result.gender === "Male";
-      // }
-      // Add more gender filters here
