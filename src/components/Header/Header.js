@@ -1,4 +1,3 @@
-import "./Header.scss";
 import Logo from "../../assets/icons/logo/logo2.png";
 import Search from "../../assets/icons/search.png";
 import Menu from "../../assets/icons/menu.png";

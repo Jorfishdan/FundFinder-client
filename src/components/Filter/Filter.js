@@ -1,4 +1,3 @@
-import "./Filter.scss";
 import arrow from "../../assets/images/arrow2.png";
 function Filter() {
   return (
