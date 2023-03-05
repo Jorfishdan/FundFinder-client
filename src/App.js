@@ -7,6 +7,7 @@ import { useState, useEffect } from "react";
 import axios from "axios"
 import "./styles/styles.scss";
 import { ToastContainer } from "react-toastify";
+import ForgotPassword from "./components/ForgotPassword/ForgotPassword";
 
 function App() {
   const URL = "http://localhost:8080";
@@ -38,6 +39,7 @@ function App() {
     <Router>
       <ToastContainer position="top-left" />
       <Routes>
+<<<<<<< HEAD
         <Route
           path="/"
           element={
@@ -74,6 +76,12 @@ function App() {
             />
           }
         />
+=======
+        <Route path="/" element={<Landing user={user} setUser={setUser} isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} URL={URL} login={login}/>}/>
+        <Route path="/signup" element={<Signup isSignedUp={isSignedUp} setIsSignedUp={setIsSignedUp} URL={URL} signup={signup}/>}/>
+        <Route path="/reset-password" element={<ForgotPassword URL={URL}/>}/>
+        <Route path="/dashboard" element={<Homepage user={user} setUser={setUser} isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} /> }/>
+>>>>>>> develop
         <Route path="/contact" element={<Contact />} />{" "}
       </Routes>
     </Router>

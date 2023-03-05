@@ -1,5 +1,4 @@
 import { useState } from "react";
-import "./GenderMod.scss";
 
 function GenderMod({ openModal, checkedGender, setCheckedGender }) {
   const handleInputChange = (event) => {

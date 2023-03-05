@@ -3,10 +3,6 @@
 @import "./resets";
 
 
-
-//pages
-
-//components
 @import '../components/Dashboard/Dashboard.scss';
 @import '../components/Filter/Filter.scss';
 @import '../components/Header/Header.scss';
@@ -17,4 +13,12 @@
 @import '../components/Menu/Menu.scss';
 @import '../components/Setting/Setting.scss';
 @import '../pages/Contact.scss';
+<<<<<<< HEAD
 @import '../components/RestEmail/ResetEmail.scss';
+=======
+@import '../components/Footer/Footer.scss';
+@import '../components/GenderMod/GenderMod.scss';
+@import '../components/LocationMod/LocationMod.scss';
+@import '../components/TypeMod/TypeMod.scss';
+@import '../components//ForgotPassword//ForgotPassword.scss'
+>>>>>>> develop
