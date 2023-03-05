@@ -50,7 +50,7 @@ export default function Welcome({ user, setUser }) {
         <label className="main__signin--label">Name</label>
           <input
             className="main__signin--input"
-            placeholder="Email..."
+            placeholder="Name..."
             type="email"
           ></input>
           <label className="main__signin--label">Email</label>
@@ -77,7 +77,7 @@ export default function Welcome({ user, setUser }) {
         </form>
      
         <section className="main__button">
-         <Link to='/'><p className="main__button--signup">Login</p></Link> 
+         <Link to='/'className="main__button--link"><p className="main__button--signup">Login</p></Link> 
           <p className="main__button--forgot">FORGOT PASSWORD?</p>
         </section>
       </section>

@@ -71,7 +71,7 @@ export default function Welcome({ user, setUser }) {
         </form>
      
         <section className="main__button">
-         <Link to='/signup'><p className="main__button--signup">SIGN UP</p></Link> 
+         <Link to='/signup' className="main__button--link"><p className="main__button--signup">SIGN UP</p></Link> 
           <p className="main__button--forgot">FORGOT PASSWORD?</p>
         </section>
       </section>

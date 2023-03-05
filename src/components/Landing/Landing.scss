@@ -103,7 +103,9 @@
     display: flex;
     justify-content: center;
     margin-top: -1rem;
-
+    &--link{
+      color: white;
+    }
     &--signup {
       margin-right: 4rem;
     }
