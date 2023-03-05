@@ -26,6 +26,7 @@ export default function Header() {
 
   function handleMenu() {
     setMenu(!menu);
+    setSetting(false);
   }
   return (
     <header className="header__container" ref={menuRef} >
