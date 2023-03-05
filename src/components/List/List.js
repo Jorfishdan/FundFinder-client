@@ -1,11 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import Filter from "../Filter/Filter";
 
-export default function List() {
 
+export default function List() {
+const [page, setPage] = useState(null)
+const [filteredResults, setFilteredResults] = useState(null)
   return (
     <main className="list__container">
-        <Filter />
+       <Filter setPage={setPage} setFilteredResults={setFilteredResults} filteredResults={filteredResults}/>
       {/* <h1 className="list__title">Current Postings</h1> */}
       <section className="list__items">
         <div className="list__items--box">
@@ -18,6 +20,8 @@ export default function List() {
           <button className="list__items--buttons--hide">Delete</button>
         </div>
       </section>
+    
     </main>
   );
 }
+// setFilteredResults={setFilteredResults} 
