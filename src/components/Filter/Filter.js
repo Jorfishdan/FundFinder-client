@@ -58,7 +58,7 @@ function Filter({setPage}) {
           <button className="filter__search">Search</button>
           <button className="filter__reset">Reset</button>
         </div>
-        <TypeMod openModal ={openModal} setPage={setPage} />
+        <TypeMod openModal ={openModal}  />
       </section>
     </>
   );
