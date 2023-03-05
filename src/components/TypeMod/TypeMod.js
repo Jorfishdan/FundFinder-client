@@ -13,11 +13,6 @@ function TypeMod({openModal, typeFilterValues,  setTypeFilterValues}) {
     }
     if (!openModal) return null;
 
-    // const handleSubmit = (event) => {
-    //     event.preventDefault();
-    //     onSubmit(filterValues);
-    // }
-
 return (
     <>
     <form className="typemod">

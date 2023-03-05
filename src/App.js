@@ -17,7 +17,7 @@ function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false)
 
 
-  console.log('APP:',URL);
+  // console.log('APP:',URL);
   return (
     <Router>
       <Routes>
