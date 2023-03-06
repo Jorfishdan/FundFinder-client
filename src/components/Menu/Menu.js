@@ -41,7 +41,7 @@ export default function Menu({
 
   return (
     <main className="menu__container">
-      <h1 className="menu__name">Hi,</h1>
+      <h1 className="menu__name">Hello There</h1>
       <div className="menu__box" onClick={handleHome}>
         <p className="menu__label">Home</p>
         <img className="menu__img menu__img-home" src={Home} alt="Home Icon" />

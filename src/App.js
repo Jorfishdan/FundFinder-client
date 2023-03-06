@@ -15,6 +15,7 @@ function App() {
   const login = "/login";
   const signup = "/signup";
   const [resetUser, setResetUser] = useState([]);
+ 
 
   const { userId } = useParams();
 
@@ -30,11 +31,6 @@ function App() {
   useEffect(() => {
     getUserData();
   }, []);
-
-  let id = resetUser.id
-  console.log(id)
-
-
 
   const [user, setUser] = useState({});
   const [isSignedUp, setIsSignedUp] = useState(false);

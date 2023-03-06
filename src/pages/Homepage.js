@@ -9,7 +9,6 @@ export default function Homepage({
   setIsLoggedIn,
   resetUser,
   userId,
-
 }) {
   return (
     <div>
@@ -20,7 +19,6 @@ export default function Homepage({
         setIsLoggedIn={setIsLoggedIn}
         resetUser={resetUser}
         userId={userId}
-
       />
       <List />
       <Footer />
