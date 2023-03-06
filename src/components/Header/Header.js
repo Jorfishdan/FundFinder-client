@@ -12,9 +12,6 @@ export default function Header({
   setIsLoggedIn,
   resetUser,
   userId,
-  currentEmail,
-  currentName,
-  setCurrentEmail
 }) {
   const [menu, setMenu] = useState(false);
   const [setting, setSetting] = useState(false);
@@ -70,9 +67,6 @@ export default function Header({
         setIsLoggedIn={setIsLoggedIn}
         resetUser={resetUser}
         userId={userId}
-        currentEmail={currentEmail}
-        currentName={currentName}
-        setCurrentEmail={setCurrentEmail}
       />
     </header>
   );

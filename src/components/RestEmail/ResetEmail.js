@@ -4,12 +4,9 @@ import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 
 
-export default function ResetEmail({ resetEmail, resetUser, currentEmail, setCurrentEmail }) {
+export default function ResetEmail({ resetEmail, resetUser }) {
 
 
-  const handleEmail = (e) => {
-    setCurrentEmail(e.target.value);
-  };
   const id = resetUser.id;
   const formRef = useRef();
 
@@ -50,9 +47,9 @@ export default function ResetEmail({ resetEmail, resetUser, currentEmail, setCur
         <label className="reset__email--form--label">New Email</label>
         <input
           className="reset__email--form--input"
-          placeholder={currentEmail || "New email here..."}
+          placeholder={"New email here..."}
           type="email"
-          onChange={handleEmail}
+        //   onChange={handleEmail}
           id="email"
         ></input>
         <button className="reset__email--form--button" type="submit">

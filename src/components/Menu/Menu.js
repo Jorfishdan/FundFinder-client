@@ -16,15 +16,11 @@ export default function Menu({
   setIsLoggedIn,
   resetUser,
   userId,
-  currentEmail,
-  currentName, 
-  setCurrentEmail
 }) {
   const navigate = useNavigate();
 
   if (!openMenu) return null;
 
-  const userName = currentName || "Guest"
 
   function handleSetting() {
     setSetting(!setting);
@@ -45,7 +41,7 @@ export default function Menu({
 
   return (
     <main className="menu__container">
-      <h1 className="menu__name">Hi, {userName}</h1>
+      <h1 className="menu__name">Hi,</h1>
       <div className="menu__box" onClick={handleHome}>
         <p className="menu__label">Home</p>
         <img className="menu__img menu__img-home" src={Home} alt="Home Icon" />
@@ -82,8 +78,6 @@ export default function Menu({
         isLoggedIn={isLoggedIn}
         resetUser={resetUser}
         userId={userId}
-        currentEmail={currentEmail}
-        setCurrentEmail={setCurrentEmail}
       />
     </main>
   );

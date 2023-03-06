@@ -13,15 +13,9 @@ export default function Welcome({
   setIsLoggedIn,
   URL,
   login,
-  setCurrentName,
-  setCurrentEmail,
 }) {
   const navigate = useNavigate();
   const formRef = useRef();
-
-  const handelEmail = (e) => {
-    setCurrentEmail(e.target.value);
-  };
 
 
   const handleLogin = (e) => {
@@ -30,6 +24,7 @@ export default function Welcome({
     const form = formRef.current;
     const email = form.email.value;
     const password = form.password.value;
+
 
     if (!email || !password) {
       toast.error("Please fill in all fields");
@@ -96,7 +91,6 @@ export default function Welcome({
             placeholder="Email..."
             type="email"
             name="email"
-            onChange={handelEmail}
           ></input>
           <label className="main__signin--label">Password</label>
           <input

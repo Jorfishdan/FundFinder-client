@@ -15,9 +15,6 @@ function App() {
   const login = "/login";
   const signup = "/signup";
   const [resetUser, setResetUser] = useState([]);
-  const [currentEmail, setCurrentEmail] = useState("")
-  const [currentName, setCurrentName] = useState("")
-
 
   const { userId } = useParams();
 
@@ -33,6 +30,11 @@ function App() {
   useEffect(() => {
     getUserData();
   }, []);
+
+  let id = resetUser.id
+  console.log(id)
+
+
 
   const [user, setUser] = useState({});
   const [isSignedUp, setIsSignedUp] = useState(false);
@@ -52,9 +54,6 @@ function App() {
               setIsLoggedIn={setIsLoggedIn}
               URL={URL}
               login={login}
-              setCurrentEmail={setCurrentEmail}
-              setCurrentName={setCurrentName}
-              
             />
           }
         />
@@ -66,8 +65,6 @@ function App() {
               setIsSignedUp={setIsSignedUp}
               URL={URL}
               signup={signup}
-              setCurrentEmail={setCurrentEmail}
-              setCurrentName={setCurrentName}
             />
           }
         />
@@ -82,9 +79,6 @@ function App() {
               setIsLoggedIn={setIsLoggedIn}
               resetUser={resetUser}
               userId={userId}
-              currentEmail={currentEmail}
-              currentName={currentName}
-              setCurrentEmail={setCurrentEmail}
             />
           }
         />

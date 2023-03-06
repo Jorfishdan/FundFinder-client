@@ -2,7 +2,7 @@ import React from "react";
 import { useState} from "react";
 import ResetEmail from "../RestEmail/ResetEmail";
 
-export default function Setting({ openSetting, resetUser, currentEmail, setCurrentEmail }) {
+export default function Setting({ openSetting, resetUser }) {
   const [resetEmail, setResetEmail] = useState(false);
 
   if (!openSetting) return null;
@@ -23,8 +23,6 @@ export default function Setting({ openSetting, resetUser, currentEmail, setCurre
       <ResetEmail
         resetEmail={resetEmail}
         resetUser={resetUser}
-        currentEmail={currentEmail}
-        setCurrentEmail={setCurrentEmail}
       />
     </>
   );
