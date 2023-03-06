@@ -43,7 +43,7 @@ export default function List() {
             {showResults()}
           </>
         ) : (
-          <p> Loading...</p>
+          <p className="list__text"> Loading...</p>
         )}
       </main>
     </>
