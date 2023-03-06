@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Filter from "../Filter/Filter";
+import pic from "../../assets/icons/logo/logo1.png";
 
 
 export default function List({ addToSavedItems }) {
@@ -57,7 +58,8 @@ export default function List({ addToSavedItems }) {
             {showResults()}
           </>
         ) : (
-          <p className="list__text"> Loading...</p>
+          // <p className="list__text"> Fill in the filter to access</p>
+          <img className="list__img" src={pic} alt="company logo" />
         )}
       </main>
     </>
