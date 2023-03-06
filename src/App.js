@@ -18,7 +18,6 @@ function App() {
   const [currentEmail, setCurrentEmail] = useState("")
   const [currentName, setCurrentName] = useState("")
 
-  console.log(currentEmail)
 
   const { userId } = useParams();
 
@@ -85,6 +84,7 @@ function App() {
               userId={userId}
               currentEmail={currentEmail}
               currentName={currentName}
+              setCurrentEmail={setCurrentEmail}
             />
           }
         />

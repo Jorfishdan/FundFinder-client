@@ -11,6 +11,7 @@ export default function Homepage({
   userId,
   currentEmail,
   currentName,
+  setCurrentEmail
 }) {
   return (
     <div>
@@ -23,6 +24,7 @@ export default function Homepage({
         userId={userId}
         currentEmail={currentEmail}
         currentName={currentName}
+        setCurrentEmail={setCurrentEmail}
       />
       <List />
       <Footer />

@@ -15,12 +15,20 @@ export default function Welcome({
   URL,
   signup,
   setCurrentEmail,
-  sestCurrentName
+  setCurrentName
 }) {
   console.log("SIGNUP:", URL);
 
   const navigate = useNavigate();
   const formRef = useRef();
+
+  const handelEmail = (e) => {
+    setCurrentEmail(e.target.value);
+  };
+
+  const handelName = (e) => {
+    setCurrentName(e.target.value);
+  };
 
   const handleSignup = (e) => {
     e.preventDefault();
@@ -44,7 +52,7 @@ export default function Welcome({
       .then(() => {
         setIsSignedUp(true);
         toast.success("Sign up successful");
-        navigate("/");
+        navigate("/dashboard");
         form.reset();
       })
       .catch((err) => {
@@ -99,6 +107,7 @@ export default function Welcome({
             placeholder="Name..."
             type="name"
             name="name"
+            onChange={handelName}
           ></input>
           <label className="main__signin--label">Email</label>
           <input
@@ -106,6 +115,7 @@ export default function Welcome({
             placeholder="Email..."
             type="email"
             name="email"
+            onChange={handelEmail}
           ></input>
           <label className="main__signin--label">Password</label>
           <input

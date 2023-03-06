@@ -13,7 +13,8 @@ export default function Header({
   resetUser,
   userId,
   currentEmail,
-  currentName
+  currentName,
+  setCurrentEmail
 }) {
   const [menu, setMenu] = useState(false);
   const [setting, setSetting] = useState(false);
@@ -71,6 +72,7 @@ export default function Header({
         userId={userId}
         currentEmail={currentEmail}
         currentName={currentName}
+        setCurrentEmail={setCurrentEmail}
       />
     </header>
   );

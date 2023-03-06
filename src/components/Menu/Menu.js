@@ -17,16 +17,14 @@ export default function Menu({
   resetUser,
   userId,
   currentEmail,
-  currentName
+  currentName, 
+  setCurrentEmail
 }) {
   const navigate = useNavigate();
 
   if (!openMenu) return null;
 
-
-  console.log(currentName)
-
-  const userName = resetUser.name || "Guest"
+  const userName = currentName || "Guest"
 
   function handleSetting() {
     setSetting(!setting);
@@ -84,6 +82,8 @@ export default function Menu({
         isLoggedIn={isLoggedIn}
         resetUser={resetUser}
         userId={userId}
+        currentEmail={currentEmail}
+        setCurrentEmail={setCurrentEmail}
       />
     </main>
   );
