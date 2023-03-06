@@ -124,7 +124,7 @@ export default function Welcome({
             >
               <div className="signup__google--signup">
                 <p className="signup__google--text">Sign Up with Google</p>
-                <img className="signup__google--icon" src={googleIcon}></img>
+                <img className="signup__google--icon" src={googleIcon} alt="Google Icon"></img>
               </div>
             </Link>
           </section>
