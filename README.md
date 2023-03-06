@@ -21,7 +21,7 @@ Javascript    | React.js      |Emailjs/brower, Axios, Dotenv, Jwt-decode, Sass, 
 
 ### Prerequesites
 - To view the server-side, you will also need to install the server side code found here [Server-Side](https://github.com/Jorfishdan/FundFinder-server "Back-End Repository"). 
-- You will need your own `.env` file enabled for your server to run. **Example**, `PORT=8080`. This will be in the Installation Steps as well as the Client-Side repository.
+- You will need your own `.env` file enabled for your server to run. **Example**, `PORT=8080`. This will be in the Installation Steps as well as the Server-Side repository.
 
 ### Installation Steps
 
