@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useRef } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import Logo from "../../assets/icons/logo/logo2.png";
 const ForgotPassword = ({URL}) => {
@@ -37,9 +37,9 @@ const ForgotPassword = ({URL}) => {
     <main className="main__container">
       <section className="main__side">
         <img src={Logo} alt="FundFinder logo" className="main__logo" />
-        <p className="main__text">
-          Please Provide your new password in order to reset it
-        </p>
+        <h1 className="main__text">
+          PLEASE PROVIDE YOUR NEW PASSWORD
+        </h1>
         <form className="main__signin" onSubmit={handleNewPass} ref={formRef}>
           <label className="main__signin--label">Email</label>
           <input
@@ -60,18 +60,10 @@ const ForgotPassword = ({URL}) => {
           <section className="main__google">
             <div id="signInDiv" className="main__google--box"></div>
           </section>
-          {/* <Link to="/dashboard" className="main__google--guest">
-                CONTINUE AS GUEST
-              </Link> */}
-        </form>
-
-        {/* <section className="main__button">
-              <Link to="/signup" className="main__button--link">
-                <p className="main__button--signup">SIGN UP</p>
+          <Link to="/" className="main__google--guest">
+                CANCEL
               </Link>
-              <p className="main__button--forgot">FORGOT PASSWORD?</p>
-            </section>
-          <img className="main__img" src={WelcomeImg} alt="Growing money" /> */}
+        </form>
       </section>
     </main>
   );
