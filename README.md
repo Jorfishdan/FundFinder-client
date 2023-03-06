@@ -6,6 +6,7 @@ However, we also faced some challenges along the way. For example, we took on ta
 
 Despite these challenges, we remained committed to overcoming them and producing an app that we are proud of.
 
+![Hompage](https://user-images.githubusercontent.com/118302785/223016513-58b25f48-8af1-4936-83b5-2b8044b9f9cc.png)
 
 
 
