@@ -24,7 +24,7 @@ export default function Dashboard({savedItems}) {
           <div className="dashboard__saved--box" >
             <h1 className="dashboard__saved--title">
               {item.name}
-            </h1>
+            </h1> 
             <h2 className="dashboard__saved--deadline">Due: {item.due}</h2>
           </div>
        
