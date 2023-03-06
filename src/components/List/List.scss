@@ -20,10 +20,12 @@
   }
   &__items {
     display: flex;
+    flex-direction:column;
     justify-content: space-between;
     align-items: center;
     margin-left: 2rem;
     margin-right: 2rem;
+    margin-top:1.5rem;
 
     padding-left:2rem;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
@@ -32,6 +34,9 @@
     &--box {
       display: flex;
       flex-direction: column;
+      flex-direction: row;
+      margin: 2rem;
+      padding: 1rem;
     }
 
     &--title {
@@ -49,6 +54,7 @@
       width: 27rem;
       justify-content: space-between;
       margin-right:2rem;
+      margin-bottom: 1rem;
 
       &--save {
         font-size: 1.8rem;
