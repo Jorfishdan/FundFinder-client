@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Filter from "../Filter/Filter";
 
 
-export default function List() {
+export default function List({ addToSavedItems }) {
   const [page, setPage] = useState(null);
   const [filteredResults, setFilteredResults] = useState(null);
 
@@ -18,7 +18,7 @@ export default function List() {
                 Learn more: {result.website}
               </h3>
               <div className="list__items--buttons">
-                <button className="list__items--buttons--save">Save</button>
+                <button className="list__items--buttons--save"  onClick={() => addToSavedItems(result)}>Save</button>
                 <button className="list__items--buttons--apply">Apply</button>
                 <button className="list__items--buttons--hide">Delete</button>
               </div>

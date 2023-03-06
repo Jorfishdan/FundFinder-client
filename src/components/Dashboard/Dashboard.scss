@@ -3,7 +3,6 @@
   &__container {
     min-width:250px;
     display: flex;
-    flex-direction: column;
     width: 17vw;
     height: 85vh;
     background: $cream;
@@ -34,6 +33,7 @@
       padding: 1rem;
       padding-top: 0rem;
       height:10rem;
+      margin:1rem 0;
     }
 
     &--box {
@@ -116,5 +116,9 @@
       margin-top: 0;
       margin-bottom: 0;
     }
+  }
+
+  &__saved--container.deleted {
+    display: none;
   }
 }
