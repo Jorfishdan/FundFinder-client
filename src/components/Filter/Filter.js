@@ -136,7 +136,7 @@ function Filter({setPage, filteredResults, setFilteredResults }) {
             />
           </article>
          
-          <button className="filter__search" onClick={handleFilterSubmit}>Search</button>
+          <button className="filter__search" onClick={handleFilterSubmit}>Apply Filters</button>
           <button className="filter__reset" onClick={handleResetClick}>Reset</button>
         </div>
         <TypeMod openModal ={openModal} checkedTypes={checkedTypes} setCheckedTypes={setCheckedTypes} />
