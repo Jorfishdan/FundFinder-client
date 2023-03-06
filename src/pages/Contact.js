@@ -199,7 +199,6 @@ export default function Contact() {
             </section>
           </div>
         </form>
-        <Dashboard />
       </section>
       <Footer />
     </>

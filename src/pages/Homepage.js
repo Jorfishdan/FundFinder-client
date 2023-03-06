@@ -1,5 +1,5 @@
 import Header from "../components/Header/Header";
-import List from "../components/Main/Main";
+import Main from "../components/Main/Main";
 import Footer from "../components/Footer/Footer";
 
 export default function Homepage({
@@ -20,7 +20,7 @@ export default function Homepage({
         resetUser={resetUser}
         userId={userId}
       />
-      <List />
+      <Main />
       <Footer />
     </div>
   );
