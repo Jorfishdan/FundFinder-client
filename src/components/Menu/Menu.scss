@@ -38,6 +38,9 @@
     &__img{
         height:3rem;
         margin-left:2rem;
+        &:hover{
+            cursor: pointer;
+        }
 
         &-contact{
             margin-left:1rem;

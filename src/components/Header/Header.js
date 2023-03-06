@@ -4,7 +4,14 @@ import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import Dropmenu from "../Menu/Menu";
 
-export default function Header({ user, setUser, isLoggedIn, setIsLoggedIn }) {
+export default function Header({
+  user,
+  setUser,
+  isLoggedIn,
+  setIsLoggedIn,
+  resetUser,
+  userId,
+}) {
   const [menu, setMenu] = useState(false);
   const [setting, setSetting] = useState(false);
 
@@ -52,6 +59,8 @@ export default function Header({ user, setUser, isLoggedIn, setIsLoggedIn }) {
         setUser={setUser}
         isLoggedIn={isLoggedIn}
         setIsLoggedIn={setIsLoggedIn}
+        resetUser={resetUser}
+        userId={userId}
       />
     </header>
   );

@@ -21,6 +21,7 @@ export default function Welcome({
   const navigate = useNavigate();
   const formRef = useRef();
 
+
   const handleSignup = (e) => {
     e.preventDefault();
 
@@ -43,7 +44,7 @@ export default function Welcome({
       .then(() => {
         setIsSignedUp(true);
         toast.success("Sign up successful");
-        navigate("/");
+        navigate("/dashboard");
         form.reset();
       })
       .catch((err) => {
@@ -97,6 +98,7 @@ export default function Welcome({
             placeholder="Name..."
             type="name"
             name="name"
+
           ></input>
           <label className="main__signin--label">Email</label>
           <input
@@ -104,6 +106,7 @@ export default function Welcome({
             placeholder="Email..."
             type="email"
             name="email"
+
           ></input>
           <label className="main__signin--label">Password</label>
           <input
@@ -121,7 +124,7 @@ export default function Welcome({
             >
               <div className="signup__google--signup">
                 <p className="signup__google--text">Sign Up with Google</p>
-                <img className="signup__google--icon" src={googleIcon}></img>
+                <img className="signup__google--icon" src={googleIcon} alt="Google Icon"></img>
               </div>
             </Link>
           </section>
