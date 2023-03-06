@@ -1,5 +1,4 @@
 import { useState } from "react";
-import "./TypeMod.scss";
 
 function TypeMod({ openModal, checkedTypes, setCheckedTypes }) {
   const handleInputChange = (event) => {
