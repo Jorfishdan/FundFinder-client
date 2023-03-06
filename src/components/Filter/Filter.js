@@ -57,7 +57,6 @@ function Filter({setPage, filteredResults, setFilteredResults }) {
       setOpenModal(true);
     }
 
-    // setOpenModal(prevOpenModal => !prevOpenModal);
   }
 
   function locationHandler() {
@@ -67,7 +66,6 @@ function Filter({setPage, filteredResults, setFilteredResults }) {
       closeAllModals();
       setOpenModalLocation(true);
     }
-    // setOpenModalLocation(prevOpenModalLocation  => !prevOpenModalLocation);
   }
 
   function genderHandler() {
