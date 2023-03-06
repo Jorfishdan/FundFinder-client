@@ -12,7 +12,7 @@ Despite these challenges, we remained committed to overcoming them and producing
 
 ## Technologies
 
-#### Back-End
+#### Front-End
 Language      | Tech Stack    | Dependencies
 ------------- | ------------- |--------------
 Javascript    | React.js      |Emailjs/brower, Axios, Dotenv, Jwt-decode, Sass, Uuid, React-Toastify, React-router-dom
