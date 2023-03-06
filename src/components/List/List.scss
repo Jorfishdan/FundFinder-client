@@ -36,6 +36,7 @@
       flex-direction: column;
       flex-direction: row;
       margin: 2rem;
+      padding: 1rem;
     }
 
     &--title {
@@ -53,6 +54,7 @@
       width: 27rem;
       justify-content: space-between;
       margin-right:2rem;
+      margin-bottom: 1rem;
 
       &--save {
         font-size: 1.8rem;
