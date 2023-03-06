@@ -57,7 +57,7 @@ export default function List({ addToSavedItems }) {
             {showResults()}
           </>
         ) : (
-          <p> Loading...</p>
+          <p className="list__text"> Loading...</p>
         )}
       </main>
     </>

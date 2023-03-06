@@ -1,0 +1,28 @@
+.signup__google{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+    &--signup{
+        display: flex;
+        background-color: white;
+        align-items: center;
+        justify-content: center;
+        border-radius: 10px;
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+        border-radius: 3px;
+        width: 21rem;
+        margin: 0;
+    }
+
+    &--text{
+        color: black;
+        font-size: 1.1rem;
+        font-weight: bold;
+    }
+
+    &--icon{
+        width: 2rem;
+        height: 2rem;
+        margin-left: 1rem;
+    }
+}

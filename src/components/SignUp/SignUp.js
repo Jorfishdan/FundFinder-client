@@ -6,6 +6,7 @@ import { useEffect, useRef } from "react";
 import axios from "axios";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import googleIcon from "../../assets/icons/google.png";
 
 export default function Welcome({
   user,
@@ -19,6 +20,7 @@ export default function Welcome({
 
   const navigate = useNavigate();
   const formRef = useRef();
+
 
   const handleSignup = (e) => {
     e.preventDefault();
@@ -42,7 +44,7 @@ export default function Welcome({
       .then(() => {
         setIsSignedUp(true);
         toast.success("Sign up successful");
-        navigate("/");
+        navigate("/dashboard");
         form.reset();
       })
       .catch((err) => {
@@ -50,7 +52,6 @@ export default function Welcome({
       });
   };
 
-  
   useEffect(() => {
     const handleCallbackResponse = (response) => {
       console.log("Encoded JWT ID token:" + response.credential);
@@ -97,6 +98,7 @@ export default function Welcome({
             placeholder="Name..."
             type="name"
             name="name"
+
           ></input>
           <label className="main__signin--label">Email</label>
           <input
@@ -104,6 +106,7 @@ export default function Welcome({
             placeholder="Email..."
             type="email"
             name="email"
+
           ></input>
           <label className="main__signin--label">Password</label>
           <input
@@ -114,8 +117,16 @@ export default function Welcome({
           ></input>
           <button className="main__signin--button">Sign Up</button>
           <hr></hr>
-          <section className="main__google">
-            <div id="signInDiv" className="main__google--box"></div>
+          <section className="signup__google">
+            <Link
+              to="https://accounts.google.com/signup/v2/webcreateaccount?continue=https%3A%2F%2Fmyaccount.google.com%3Futm_source%3Daccount-marketing-page%26utm_medium%3Dcreate-account-button&flowName=GlifWebSignIn&flowEntry=SignUp"
+              target="_blank"
+            >
+              <div className="signup__google--signup">
+                <p className="signup__google--text">Sign Up with Google</p>
+                <img className="signup__google--icon" src={googleIcon} alt="Google Icon"></img>
+              </div>
+            </Link>
           </section>
           <Link to="/dashboard" className="main__google--guest">
             CONTINUE AS GUEST

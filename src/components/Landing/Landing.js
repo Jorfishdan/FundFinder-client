@@ -17,12 +17,14 @@ export default function Welcome({
   const navigate = useNavigate();
   const formRef = useRef();
 
+
   const handleLogin = (e) => {
     e.preventDefault();
 
     const form = formRef.current;
     const email = form.email.value;
     const password = form.password.value;
+
 
     if (!email || !password) {
       toast.error("Please fill in all fields");

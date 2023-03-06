@@ -21,6 +21,10 @@
     margin-top: 0.5rem;
     margin-left: 2rem;
   }
+  &__text{
+    margin-left: .5rem;
+    padding-left: 1rem;
+  }
   &__items {
     display: flex;
     flex-direction:column;

@@ -9,6 +9,7 @@
         background-color: $cream;
         border:1px solid $blue;
         border-radius: 10px;
+        margin-right: 1rem;
     }
     &__box{
         display: flex;
@@ -37,6 +38,9 @@
     &__img{
         height:3rem;
         margin-left:2rem;
+        &:hover{
+            cursor: pointer;
+        }
 
         &-contact{
             margin-left:1rem;
