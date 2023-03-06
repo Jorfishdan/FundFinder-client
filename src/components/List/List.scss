@@ -11,6 +11,9 @@
     margin-top: 2rem;
     margin-left: 2rem;
   }
+  // &__details-wrapper {
+  //   margin-right: 10rem;
+  // }
 
   &__title {
     color: $blue;
@@ -37,7 +40,12 @@
       flex-direction: row;
       margin: 2rem;
       padding: 1rem;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
     }
+
+
 
     &--title {
       color: $blue;
@@ -50,14 +58,15 @@
       font-size: 1.4rem;
     }
     &__saved--container.deleted {
-      display: none;
-    }
+    display: none;
+  }
     &--buttons {
       display: flex;
       width: 27rem;
       justify-content: space-between;
       margin-right:2rem;
       margin-bottom: 1rem;
+     
 
       &--save {
         font-size: 1.8rem;
@@ -67,6 +76,12 @@
         border-radius: 10px;
         color: $white;
         padding: 0.5rem 2rem;  
+        width:8rem;
+        height:3.5rem;
+        display: flex;
+        align-items: center;
+    justify-content: center;
+
         
         &:hover{
           cursor: pointer;
@@ -80,6 +95,11 @@
         border-radius: 10px;
         color: $white;
         padding: 0.5rem 2rem;
+        width:8rem;
+        height:3.5rem;
+        display: flex;
+        align-items: center;
+    justify-content: center;
 
         &:hover{
           cursor: pointer;
@@ -93,6 +113,11 @@
         border-radius: 10px;
         color: $white;
         padding: 0.5rem 2rem;
+        width:8rem;
+        height:3.5rem;
+        display: flex;
+        align-items: center;
+    justify-content: center;
 
         &:hover{
           cursor: pointer;

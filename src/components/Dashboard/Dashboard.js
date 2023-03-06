@@ -39,16 +39,7 @@ export default function Dashboard({savedItems}) {
         
          ))}
       </section>
-       
-      {/* <section className="dashboard__applied">
-        <h1 className="dashboard__title">Applied</h1>
-        <div className="dashboard__applied--box">
-          <h1 className="dashboard__applied--title">
-            This is a loanThis is a loanThis is a loanThis is a loan
-          </h1>
-          <h2 className="dashboard__applied--deadline">This is a deadline</h2>
-        </div>
-      </section> */}
+
     </main>
   );
 }
