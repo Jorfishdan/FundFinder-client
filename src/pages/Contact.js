@@ -2,7 +2,7 @@ import Header from "../components/Header/Header";
 import Footer from "../components/Footer/Footer";
 import emailjs from "@emailjs/browser";
 import { ToastContainer, toast } from "react-toastify";
-
+import { useNavigate } from "react-router-dom";
 import { useState, useRef } from "react";
 import Dashboard from "../components/Dashboard/Dashboard";
 
@@ -18,6 +18,7 @@ export default function Contact() {
   const [errorMessage, setErrorMessage] = useState(false);
 
   const formRef = useRef();
+  const navigate = useNavigate();
 
   const handleName = (e) => {
     setName(e.target.value);
@@ -190,6 +191,7 @@ export default function Contact() {
                 className="contact__button--cancel"
                 onClick={() => {
                   resetForm();
+                  navigate("/dashboard")
                 }}
               >
                 Cancel

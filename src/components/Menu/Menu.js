@@ -16,11 +16,11 @@ export default function Menu({
   setIsLoggedIn,
   resetUser,
   userId,
+
 }) {
   const navigate = useNavigate();
 
   if (!openMenu) return null;
-
 
   function handleSetting() {
     setSetting(!setting);

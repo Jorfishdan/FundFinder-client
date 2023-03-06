@@ -50,6 +50,10 @@ export default function Header({
           alt="Menu icon"
         />
       </section>
+      <div
+        className={`header__menu ${menu ? "active" : "inactive"}`}
+        menuRef={menuRef}
+      >
       <Dropmenu
         openMenu={menu}
         setOpenMenu={setMenu}
@@ -62,6 +66,7 @@ export default function Header({
         resetUser={resetUser}
         userId={userId}
       />
+       </div>
     </header>
   );
 }

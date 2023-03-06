@@ -2,6 +2,7 @@
   &__container {
     position:absolute;
     width: 8vw;
+    top:0;
     min-width: 17rem;
     background-color: $cream;
     border: 1px solid $blue;
@@ -23,5 +24,33 @@
     &:hover{
       cursor: pointer;
     }
+  }
+}
+
+.header{
+  &__menu.active{
+    position: absolute;
+    visibility: visible;
+    right:0;
+    top:1.8rem;
+    text-align: center;
+    width:8vw;
+    min-width:17rem;
+    background-color: $cream;
+    border:1px solid $blue;
+    border-radius: 10px;
+
+  }
+  &__menu.inactive{
+    position: absolute;
+    visibility: hidden;
+    right:0;
+    top:1.8rem;
+    text-align: center;
+    width:8vw;
+    min-width:17rem;
+    background-color: $cream;
+    border:1px solid $blue;
+    border-radius: 10px;
   }
 }
