@@ -1,5 +1,5 @@
 // import "./Dashboard.scss";
-import Filter from "../Filter/Filter";
+
 
 import { useState } from "react";
 
@@ -40,7 +40,7 @@ export default function Dashboard({savedItems}) {
          ))}
       </section>
        
-      <section className="dashboard__applied">
+      {/* <section className="dashboard__applied">
         <h1 className="dashboard__title">Applied</h1>
         <div className="dashboard__applied--box">
           <h1 className="dashboard__applied--title">
@@ -48,7 +48,7 @@ export default function Dashboard({savedItems}) {
           </h1>
           <h2 className="dashboard__applied--deadline">This is a deadline</h2>
         </div>
-      </section>
+      </section> */}
     </main>
   );
 }
