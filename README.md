@@ -15,7 +15,7 @@ Despite these challenges, we remained committed to overcoming them and producing
 #### Back-End
 Language      | Tech Stack    | Dependencies
 ------------- | ------------- |--------------
-Javascript    | Node.js      |Express.js, Bcrypt, Cors, and Dotenv
+Javascript    | React.js      |Emailjs/brower, Axios, Dotenv, Jwt-decode, Sass, Uuid, React-Toastify, React-router-dom
 
 ## Run Locally
 
@@ -32,7 +32,7 @@ git clone https://github.com/Jorfishdan/FundFinder-client.git
 
 2. Navigate to the new directory:
 ```sh
-cd FundFinder-server
+cd FundFinder-client
 ```
 
 3. Ensure a `.env` file exists, and if not create one:
