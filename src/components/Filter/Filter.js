@@ -42,17 +42,42 @@ function Filter({setPage, filteredResults, setFilteredResults }) {
     male: false,
     other: false,
   })
+
+  function closeAllModals() {
+    setOpenModal(false);
+    setOpenModalLocation(false);
+    setOpenModalGender(false);
+  }
  
   function typeHandler() {
-    setOpenModal(prevOpenModal => !prevOpenModal);
+    if (openModal) {
+      closeAllModals();
+    } else {
+      closeAllModals();
+      setOpenModal(true);
+    }
+
+    // setOpenModal(prevOpenModal => !prevOpenModal);
   }
 
   function locationHandler() {
-    setOpenModalLocation(prevOpenModalLocation  => !prevOpenModalLocation);
+    if (openModalLocation) {
+      closeAllModals();
+    } else {
+      closeAllModals();
+      setOpenModalLocation(true);
+    }
+    // setOpenModalLocation(prevOpenModalLocation  => !prevOpenModalLocation);
   }
 
   function genderHandler() {
-    setOpenModalGender(prevOpenModalGender  => !prevOpenModalGender);
+    if (openModalGender) {
+      closeAllModals();
+    } else {
+      closeAllModals();
+      setOpenModalGender(true);
+    }
+    // setOpenModalGender(prevOpenModalGender  => !prevOpenModalGender);
   }
 
   function handleFilterSubmit() {
