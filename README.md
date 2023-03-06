@@ -1,70 +1,60 @@
-# Getting Started with Create React App
+# FUNDFINDER
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Our team was driven by our personal experiences and growth to create an app that would cater to women who are new to the tech industry. As we worked together to develop the app, we learned invaluable lessons on the importance of teamwork, resilience, and dividing tasks in a collaborative environment.
 
-## Available Scripts
+However, we also faced some challenges along the way. For example, we took on tasks that we didn't have much experience with, resulting in some hiccups on the road. One such challenge was an issue with saving the user who was currently logged in. Though we were able to eventually figure it out, time constraints meant that we were unable to implement the feature fully. We also encountered issues with lifting states and using axios to filter requests.
 
-In the project directory, you can run:
+Despite these challenges, we remained committed to overcoming them and producing an app that we are proud of.
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+## Technologies
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+#### Front-End
+Language      | Tech Stack    | Dependencies
+------------- | ------------- |--------------
+Javascript    | React.js      | Axios, Email.js, JWT-decode, React-toastify, and Sass
 
-### `npm run build`
+## Run Locally
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Prerequesites
+- To run the client-side, you will also need to install and run the server side code found here [Server-Side](https://github.com/Jorfishdan/FundFinder-server/ "Back-End Repository"). Copy the `PORT` that this repository is run on.
+- You will need to create your own `.env` file in this repository to connect the client side to the server side. Be sure to use `REACT_APP_BASE_URL=` as a variable. Example, `REACT_APP_BASE_URL=http://localhost:8080`. This will be in the Installation Steps.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Installation Steps
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. Run the following code in the terminal: 
+```sh
+git clone https://github.com/Jorfishdan/FundFinder-client.git
+```
 
-### `npm run eject`
+2. Navigate to the new directory:
+```sh
+cd FUNDFINDER-Client
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+3. Ensure a `.env` file exists, and if not create one, with the `PORT` the server is running on from the prerequisites:
+```sh
+echo 'REACT_APP_BASE_URL=http://localhost:<PORT>' >> .env
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+4. Install all packages and dependencies:
+```sh
+npm i
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+5. Start the app:
+```sh
+npm start
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Our Contact Information
 
-## Learn More
+Developers               | Email                          | LinkedIn
+------------------------| ------------------------------ |--------------
+Kimberly Nolsin         |  kimberly.nolsin@gmail.com     | [Kimberly's Profile](https://www.linkedin.com/in/kimberly-nolsin/ "Profile")
+Hilary Britton Foster   |  hilarybrittonfoster@gmail.com | [Hilarys's Profile](https://www.linkedin.com/in/hilary-britton-foster/ "Profile")
+Jordan Fish             |  kjordanfish63@gmail.com       | [Jordan's Profile](https://www.linkedin.com/in/jordan-fish/ "Profile")
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
